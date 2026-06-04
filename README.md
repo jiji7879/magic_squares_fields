@@ -27,7 +27,7 @@ $$\mathbb F_3,\mathbb F_7,\mathbb F_{11},\mathbb F_{19},\mathbb F_{23},
 \mathbb F_{27},\mathbb F_{31},\mathbb F_{43},\mathbb F_{47},
 \mathbb F_{67},\mathbb F_{243}.$$
 
-The repository also includes a computation for cubes. Among odd-characteristic finite fields, the (3)-Parker fields found below the theoretical bound ($Q<1037$) are:
+The repository also includes a computation for cubes. Among odd-characteristic finite fields, the $3$-Parker fields found below the theoretical bound ($Q<1037$) are:
 
 $$\mathbb F_3,\mathbb F_5,\mathbb F_7,\mathbb F_{13},\mathbb F_{19},\mathbb F_{25},
 \mathbb F_{31},\mathbb F_{37},\mathbb F_{43},\mathbb F_{61},\mathbb F_{67},
@@ -37,17 +37,18 @@ Characteristic two is exceptional: every ($3\times3$) magic square over a field 
 
 ## Files
 
-| File                           | Purpose                                                                           |
-| ------------------------------ | --------------------------------------------------------------------------------- |
-| `pythagorean_fields_common.py`    | Shared finite-field arithmetic and magic-square search functions.                                               |
-| `pythagorean_fields_q1.py`        | Verifies the ($Q\equiv 1\mod 4$) square case below the theoretical bound ($Q<77$).                                          |
-| `q1_results.txt`                  | Output from the ($Q\equiv 1\mod 4$) square computation.                                                                 |
-| `pythagorean_fields_q3.py`        | Verifies the ($Q\equiv 3\mod 4$) square case below the theoretical bound ($Q<553736$).                                      |
-| `q3_b3_then_autoline_results.txt` | Output from the ($Q\equiv 3\mod4$) square computation finding witnesses with the b3 then autoline construction.        |
-| `q3_full_uv_results.txt`          | Output from the ($Q\equiv 3\mod4$) square computation for the fields without witnesses in q3_b3_then_autoline_results. |
-| `pythagorean_fields_n3.py`        | Verifies the odd-characteristic cube case below the theoretical bound ($Q<1037$).                                        |
-| `n3_results.txt`                  | Output from the cube computation.                                                                 |
+| File | Purpose |
+|---|---|
+| `pythagorean_fields_common.py` | Shared finite-field arithmetic and magic-square search functions. |
+| `pythagorean_fields_q1.py` | Verifies the $Q\equiv 1\pmod 4$ square case below $Q<77$. |
+| `q1_results.txt` | Output from the $Q\equiv 1\pmod 4$ square computation. |
+| `pythagorean_fields_q3.py` | Verifies the $Q\equiv 3\pmod 4$ square case below $Q<553736$. |
+| `q3_b3_then_autoline_results.txt` | Fast line-search witnesses for the $Q\equiv 3\pmod 4$ case. |
+| `q3_full_uv_results.txt` | Full center-one checks for the fields not resolved by the line search. |
+| `pythagorean_fields_n3.py` | Verifies the odd-characteristic cube case below $Q<1037$. |
+| `n3_results.txt` | Output from the cube computation. |
 
+The line-search file is used to find witnesses quickly. The full-UV file checks the remaining no-witness fields by the complete center-one search.
 ## Mathematical background
 
 Every ($3\times3$) magic square over a commutative ring can be written in the universal form
@@ -71,7 +72,7 @@ The paper proves that:
 
 * every ($Q\equiv 1\mod 4$) finite field with ($Q\ge 77$) is non-Parker;
 * every ($Q\equiv 3\mod 4$) finite field with ($Q\ge 553736$) is non-Parker;
-* every odd finite field with ($Q\ge 1037$) is non-(3)-Parker for cubes.
+* every odd finite field with ($Q\ge 1037$) is non-$3$-Parker for cubes.
 
 Thus only finitely many finite fields need to be checked computationally in each case.
 
