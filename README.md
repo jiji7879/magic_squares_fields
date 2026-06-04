@@ -51,7 +51,7 @@ Characteristic two is exceptional: every (3\times3) magic square over a field of
 | `q1_results.txt`                  | Output from the (Q\equiv1\pmod4) square computation.                                                                 |
 | `pythagorean_fields_q3.py`        | Verifies the (Q\equiv3\pmod4) square case below the theoretical bound (Q<553736).                                      |
 | `q3_b3_then_autoline_results.txt` | Output from the (Q\equiv3\pmod4) square computation finding witnesses with the b3 then autoline construction.        |
-| `q3_results.txt`                  | Output from the (Q\equiv3\pmod4) square computation for the fields without witnesses in q3_b3_then_autoline_results. |
+| `q3_full_uv_results.txt`          | Output from the (Q\equiv3\pmod4) square computation for the fields without witnesses in q3_b3_then_autoline_results. |
 | `pythagorean_fields_n3.py`        | Verifies the odd-characteristic cube case below the theoretical bound (Q<1037).                                        |
 | `n3_results.txt`                  | Output from the cube computation.                                                                 |
 
