@@ -16,12 +16,12 @@ $$\mathbb F_3,\mathbb F_5,\mathbb F_7,\mathbb F_9,\mathbb F_{11},\mathbb F_{13},
 \mathbb F_{19},\mathbb F_{23},\mathbb F_{25},\mathbb F_{27},\mathbb F_{31},
 \mathbb F_{43},\mathbb F_{47},\mathbb F_{67},\mathbb F_{243}.$$
 
-For fields of order (Q\equiv 1 \pmod 4), the Parker fields are:
+For fields of order ($Q\equiv 1 \pmod 4$), the Parker fields are:
 
 $$\mathbb F_5,\mathbb F_9,\mathbb F_{13},\mathbb F_{17},\mathbb F_{25}.
 $$
 
-For fields of order (Q\equiv 3 \pmod 4), the Parker fields are:
+For fields of order ($Q\equiv 3 \pmod 4$), the Parker fields are:
 
 $$\mathbb F_3,\mathbb F_7,\mathbb F_{11},\mathbb F_{19},\mathbb F_{23},
 \mathbb F_{27},\mathbb F_{31},\mathbb F_{43},\mathbb F_{47},
