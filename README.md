@@ -27,7 +27,7 @@ $$\mathbb F_3,\mathbb F_7,\mathbb F_{11},\mathbb F_{19},\mathbb F_{23},
 \mathbb F_{27},\mathbb F_{31},\mathbb F_{43},\mathbb F_{47},
 \mathbb F_{67},\mathbb F_{243}.$$
 
-The repository also includes a computation for cubes. Among odd-characteristic finite fields, the (3)-Parker fields found below the theoretical bound (Q<1037) are:
+The repository also includes a computation for cubes. Among odd-characteristic finite fields, the (3)-Parker fields found below the theoretical bound ($Q<1037$) are:
 
 $$\mathbb F_3,\mathbb F_5,\mathbb F_7,\mathbb F_{13},\mathbb F_{19},\mathbb F_{25},
 \mathbb F_{31},\mathbb F_{37},\mathbb F_{43},\mathbb F_{61},\mathbb F_{67},
@@ -55,8 +55,8 @@ Every ($3\times3$) magic square over a commutative ring can be written in the un
 $$
 M(E,U,V)=
 \begin{pmatrix}
-E+U & E-U-V & E+V\
-E-U+V & E & E+U-V\
+E+U & E-U-V & E+V \\
+E-U+V & E & E+U-V \\
 E-V & E+U+V & E-U
 \end{pmatrix}.
 $$
