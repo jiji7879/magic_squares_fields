@@ -1,0 +1,3242 @@
+Odd-characteristic 3-Parker / cube-field verification
+======================================================
+bound: Q < 1037
+exponent n: 3
+number of fields: 190
+orders: [3, 5, 7, 9, 11, 13, 17, 19, 23, 25, 27, 29, 31, 37, 41, 43, 47, 49, 53, 59, 61, 67, 71, 73, 79, 81, 83, 89, 97, 101, 103, 107, 109, 113, 121, 125, 127, 131, 137, 139, 149, 151, 157, 163, 167, 169, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 243, 251, 257, 263, 269, 271, 277, 281, 283, 289, 293, 307, 311, 313, 317, 331, 337, 343, 347, 349, 353, 359, 361, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 529, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 625, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 729, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 841, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 961, 967, 971, 977, 983, 991, 997, 1009, 1013, 1019, 1021, 1031, 1033]
+
+
+========================================================================
+F_3: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_5: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_7: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_9: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_9 = GF(9) = GF(3^2)
+characteristic: 3
+field model: GF(9) = F_3[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '2 + 2*a', '1']
+  ['1 + 2*a', '0', '2 + a']
+  ['2', '1 + a', '2*a']
+one choice of 3-th roots:
+  ['2*a', '2 + a', '1']
+  ['1 + a', '0', '2 + 2*a']
+  ['2', '1 + 2*a', 'a']
+
+========================================================================
+F_11: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_11 = GF(11) = GF(11^1)
+characteristic: 11
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '7', '1']
+  ['9', '0', '2']
+  ['10', '4', '8']
+one choice of 3-th roots:
+  ['9', '6', '1']
+  ['4', '0', '7']
+  ['10', '5', '2']
+
+========================================================================
+F_13: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_17: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_17 = GF(17) = GF(17^1)
+characteristic: 17
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '13', '1']
+  ['15', '0', '2']
+  ['16', '4', '14']
+one choice of 3-th roots:
+  ['7', '4', '1']
+  ['9', '0', '8']
+  ['16', '13', '10']
+
+========================================================================
+F_19: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_23: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_23 = GF(23) = GF(23^1)
+characteristic: 23
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '19', '1']
+  ['21', '0', '2']
+  ['22', '4', '20']
+one choice of 3-th roots:
+  ['12', '20', '1']
+  ['7', '0', '16']
+  ['22', '3', '11']
+
+========================================================================
+F_25: 3-PARKER / no normalized cube witness (0.001s)
+
+========================================================================
+F_27: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_27 = GF(27) = GF(3^3)
+characteristic: 3
+field model: GF(27) = F_3[a]/(1 + 2*x + x^3)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '2 + 2*a', '1']
+  ['1 + 2*a', '0', '2 + a']
+  ['2', '1 + a', '2*a']
+one choice of 3-th roots:
+  ['1 + a', '1 + 2*a', '1']
+  ['2*a', '0', 'a']
+  ['2', '2 + a', '2 + 2*a']
+
+========================================================================
+F_29: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_29 = GF(29) = GF(29^1)
+characteristic: 29
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '25', '1']
+  ['27', '0', '2']
+  ['28', '4', '26']
+one choice of 3-th roots:
+  ['18', '20', '1']
+  ['3', '0', '26']
+  ['28', '9', '11']
+
+========================================================================
+F_31: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_37: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_41: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_41 = GF(41) = GF(41^1)
+characteristic: 41
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '37', '1']
+  ['39', '0', '2']
+  ['40', '4', '38']
+one choice of 3-th roots:
+  ['27', '16', '1']
+  ['36', '0', '5']
+  ['40', '25', '14']
+
+========================================================================
+F_43: 3-PARKER / no normalized cube witness (0.000s)
+
+========================================================================
+F_47: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_47 = GF(47) = GF(47^1)
+characteristic: 47
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '43', '1']
+  ['45', '0', '2']
+  ['46', '4', '44']
+one choice of 3-th roots:
+  ['28', '29', '1']
+  ['26', '0', '21']
+  ['46', '18', '19']
+
+========================================================================
+F_49: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_49 = GF(49) = GF(7^2)
+characteristic: 7
+field model: GF(49) = F_7[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3 + 2*a
+U = 3 + 2*a
+V = 1
+magic square entries:
+  ['3 + 2*a', '3 + 5*a', '1']
+  ['5 + 5*a', '0', '2 + 2*a']
+  ['6', '4 + 2*a', '4 + 5*a']
+one choice of 3-th roots:
+  ['2 + 3*a', '4 + a', '1']
+  ['4 + 3*a', '0', '6 + a']
+  ['3', '5 + 3*a', '3 + a']
+
+========================================================================
+F_53: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_53 = GF(53) = GF(53^1)
+characteristic: 53
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '49', '1']
+  ['51', '0', '2']
+  ['52', '4', '50']
+one choice of 3-th roots:
+  ['33', '47', '1']
+  ['35', '0', '18']
+  ['52', '6', '20']
+
+========================================================================
+F_59: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_59 = GF(59) = GF(59^1)
+characteristic: 59
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '55', '1']
+  ['57', '0', '2']
+  ['58', '4', '56']
+one choice of 3-th roots:
+  ['49', '31', '1']
+  ['21', '0', '38']
+  ['58', '28', '10']
+
+========================================================================
+F_61: 3-PARKER / no normalized cube witness (0.001s)
+
+========================================================================
+F_67: 3-PARKER / no normalized cube witness (0.001s)
+
+========================================================================
+F_71: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_71 = GF(71) = GF(71^1)
+characteristic: 71
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '67', '1']
+  ['69', '0', '2']
+  ['70', '4', '68']
+one choice of 3-th roots:
+  ['6', '13', '1']
+  ['22', '0', '49']
+  ['70', '58', '65']
+
+========================================================================
+F_73: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_73 = GF(73) = GF(73^1)
+characteristic: 73
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 8
+U = 8
+V = 1
+magic square entries:
+  ['8', '64', '1']
+  ['66', '0', '7']
+  ['72', '9', '65']
+one choice of 3-th roots:
+  ['2', '4', '1']
+  ['42', '0', '13']
+  ['9', '36', '18']
+
+========================================================================
+F_79: 3-PARKER / no normalized cube witness (0.001s)
+
+========================================================================
+F_81: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_81 = GF(81) = GF(3^4)
+characteristic: 3
+field model: GF(81) = F_3[a]/(2 + x + x^4)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '2 + 2*a', '1']
+  ['1 + 2*a', '0', '2 + a']
+  ['2', '1 + a', '2*a']
+one choice of 3-th roots:
+  ['a + 2*a^2 + a^3', '2 + 2*a + a^2 + 2*a^3', '1']
+  ['1 + 2*a + a^2 + 2*a^3', '0', '2 + a + 2*a^2 + a^3']
+  ['2', '1 + a + 2*a^2 + a^3', '2*a + a^2 + 2*a^3']
+
+========================================================================
+F_83: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_83 = GF(83) = GF(83^1)
+characteristic: 83
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '79', '1']
+  ['81', '0', '2']
+  ['82', '4', '80']
+one choice of 3-th roots:
+  ['11', '73', '1']
+  ['33', '0', '50']
+  ['82', '10', '72']
+
+========================================================================
+F_89: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_89 = GF(89) = GF(89^1)
+characteristic: 89
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '85', '1']
+  ['87', '0', '2']
+  ['88', '4', '86']
+one choice of 3-th roots:
+  ['29', '11', '1']
+  ['73', '0', '16']
+  ['88', '78', '60']
+
+========================================================================
+F_97: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_97 = GF(97) = GF(97^1)
+characteristic: 97
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 19
+U = 19
+V = 1
+magic square entries:
+  ['19', '77', '1']
+  ['79', '0', '18']
+  ['96', '20', '78']
+one choice of 3-th roots:
+  ['26', '15', '1']
+  ['12', '0', '44']
+  ['36', '55', '60']
+
+========================================================================
+F_101: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_101 = GF(101) = GF(101^1)
+characteristic: 101
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '97', '1']
+  ['99', '0', '2']
+  ['100', '4', '98']
+one choice of 3-th roots:
+  ['53', '31', '1']
+  ['75', '0', '26']
+  ['100', '70', '48']
+
+========================================================================
+F_103: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_103 = GF(103) = GF(103^1)
+characteristic: 103
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '93', '1']
+  ['95', '0', '8']
+  ['102', '10', '94']
+one choice of 3-th roots:
+  ['60', '33', '1']
+  ['11', '0', '2']
+  ['47', '6', '21']
+
+========================================================================
+F_107: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_107 = GF(107) = GF(107^1)
+characteristic: 107
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '103', '1']
+  ['105', '0', '2']
+  ['106', '4', '104']
+one choice of 3-th roots:
+  ['25', '71', '1']
+  ['101', '0', '6']
+  ['106', '36', '82']
+
+========================================================================
+F_109: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_109 = GF(109) = GF(109^1)
+characteristic: 109
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 33
+U = 33
+V = 1
+magic square entries:
+  ['33', '75', '1']
+  ['77', '0', '32']
+  ['108', '34', '76']
+one choice of 3-th roots:
+  ['41', '9', '1']
+  ['30', '0', '67']
+  ['46', '31', '8']
+
+========================================================================
+F_113: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_113 = GF(113) = GF(113^1)
+characteristic: 113
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '109', '1']
+  ['111', '0', '2']
+  ['112', '4', '110']
+one choice of 3-th roots:
+  ['33', '106', '1']
+  ['32', '0', '81']
+  ['112', '7', '80']
+
+========================================================================
+F_121: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_121 = GF(121) = GF(11^2)
+characteristic: 11
+field model: GF(121) = F_11[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '7', '1']
+  ['9', '0', '2']
+  ['10', '4', '8']
+one choice of 3-th roots:
+  ['9', '6', '1']
+  ['4', '0', '7']
+  ['10', '5', '2']
+
+========================================================================
+F_125: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_125 = GF(125) = GF(5^3)
+characteristic: 5
+field model: GF(125) = F_5[a]/(1 + x + x^3)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '4 + 4*a', '1']
+  ['1 + 4*a', '0', '4 + a']
+  ['4', '1 + a', '4*a']
+one choice of 3-th roots:
+  ['2 + 3*a + a^2', 'a', '1']
+  ['4*a + 3*a^2', '0', 'a + 2*a^2']
+  ['4', '4*a', '3 + 2*a + 4*a^2']
+
+========================================================================
+F_127: 3-PARKER / no normalized cube witness (0.003s)
+
+========================================================================
+F_131: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_131 = GF(131) = GF(131^1)
+characteristic: 131
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '127', '1']
+  ['129', '0', '2']
+  ['130', '4', '128']
+one choice of 3-th roots:
+  ['46', '97', '1']
+  ['77', '0', '54']
+  ['130', '34', '85']
+
+========================================================================
+F_137: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_137 = GF(137) = GF(137^1)
+characteristic: 137
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '133', '1']
+  ['135', '0', '2']
+  ['136', '4', '134']
+one choice of 3-th roots:
+  ['29', '123', '1']
+  ['39', '0', '98']
+  ['136', '14', '108']
+
+========================================================================
+F_139: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_139 = GF(139) = GF(139^1)
+characteristic: 139
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 63
+U = 63
+V = 1
+magic square entries:
+  ['63', '75', '1']
+  ['77', '0', '62']
+  ['138', '64', '76']
+one choice of 3-th roots:
+  ['24', '33', '1']
+  ['6', '0', '26']
+  ['43', '4', '59']
+
+========================================================================
+F_149: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_149 = GF(149) = GF(149^1)
+characteristic: 149
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '145', '1']
+  ['147', '0', '2']
+  ['148', '4', '146']
+one choice of 3-th roots:
+  ['72', '17', '1']
+  ['79', '0', '70']
+  ['148', '132', '77']
+
+========================================================================
+F_151: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_151 = GF(151) = GF(151^1)
+characteristic: 151
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 27
+U = 27
+V = 1
+magic square entries:
+  ['27', '123', '1']
+  ['125', '0', '26']
+  ['150', '28', '124']
+one choice of 3-th roots:
+  ['3', '11', '1']
+  ['5', '0', '14']
+  ['33', '61', '55']
+
+========================================================================
+F_157: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_157 = GF(157) = GF(157^1)
+characteristic: 157
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 28
+U = 28
+V = 1
+magic square entries:
+  ['28', '128', '1']
+  ['130', '0', '27']
+  ['156', '29', '129']
+one choice of 3-th roots:
+  ['50', '73', '1']
+  ['39', '0', '3']
+  ['13', '7', '22']
+
+========================================================================
+F_163: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_163 = GF(163) = GF(163^1)
+characteristic: 163
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 22
+U = 22
+V = 1
+magic square entries:
+  ['22', '140', '1']
+  ['142', '0', '21']
+  ['162', '23', '141']
+one choice of 3-th roots:
+  ['10', '25', '1']
+  ['50', '0', '16']
+  ['59', '8', '72']
+
+========================================================================
+F_167: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_167 = GF(167) = GF(167^1)
+characteristic: 167
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '163', '1']
+  ['165', '0', '2']
+  ['166', '4', '164']
+one choice of 3-th roots:
+  ['72', '67', '1']
+  ['10', '0', '157']
+  ['166', '100', '95']
+
+========================================================================
+F_169: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_169 = GF(169) = GF(13^2)
+characteristic: 13
+field model: GF(169) = F_13[a]/(2 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 5 + a
+U = 5 + a
+V = 1
+magic square entries:
+  ['5 + a', '7 + 12*a', '1']
+  ['9 + 12*a', '0', '4 + a']
+  ['12', '6 + a', '8 + 12*a']
+one choice of 3-th roots:
+  ['12 + a', '3 + 2*a', '1']
+  ['3 + a', '0', '12 + 4*a']
+  ['4', '4 + 7*a', '9 + 4*a']
+
+========================================================================
+F_173: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_173 = GF(173) = GF(173^1)
+characteristic: 173
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '169', '1']
+  ['171', '0', '2']
+  ['172', '4', '170']
+one choice of 3-th roots:
+  ['166', '29', '1']
+  ['12', '0', '161']
+  ['172', '144', '7']
+
+========================================================================
+F_179: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_179 = GF(179) = GF(179^1)
+characteristic: 179
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '175', '1']
+  ['177', '0', '2']
+  ['178', '4', '176']
+one choice of 3-th roots:
+  ['47', '37', '1']
+  ['121', '0', '58']
+  ['178', '142', '132']
+
+========================================================================
+F_181: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_181 = GF(181) = GF(181^1)
+characteristic: 181
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 6
+U = 6
+V = 1
+magic square entries:
+  ['6', '174', '1']
+  ['176', '0', '5']
+  ['180', '7', '175']
+one choice of 3-th roots:
+  ['112', '93', '1']
+  ['79', '0', '9']
+  ['49', '32', '54']
+
+========================================================================
+F_191: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_191 = GF(191) = GF(191^1)
+characteristic: 191
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '187', '1']
+  ['189', '0', '2']
+  ['190', '4', '188']
+one choice of 3-th roots:
+  ['48', '165', '1']
+  ['44', '0', '147']
+  ['190', '26', '143']
+
+========================================================================
+F_193: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_193 = GF(193) = GF(193^1)
+characteristic: 193
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 68
+U = 68
+V = 1
+magic square entries:
+  ['68', '124', '1']
+  ['126', '0', '67']
+  ['192', '69', '125']
+one choice of 3-th roots:
+  ['39', '98', '1']
+  ['8', '0', '100']
+  ['85', '31', '5']
+
+========================================================================
+F_197: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_197 = GF(197) = GF(197^1)
+characteristic: 197
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '193', '1']
+  ['195', '0', '2']
+  ['196', '4', '194']
+one choice of 3-th roots:
+  ['117', '150', '1']
+  ['176', '0', '21']
+  ['196', '47', '80']
+
+========================================================================
+F_199: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_199 = GF(199) = GF(199^1)
+characteristic: 199
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 60
+U = 60
+V = 1
+magic square entries:
+  ['60', '138', '1']
+  ['140', '0', '59']
+  ['198', '61', '139']
+one choice of 3-th roots:
+  ['42', '82', '1']
+  ['31', '0', '97']
+  ['93', '18', '116']
+
+========================================================================
+F_211: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_211 = GF(211) = GF(211^1)
+characteristic: 211
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 12
+U = 12
+V = 1
+magic square entries:
+  ['12', '198', '1']
+  ['200', '0', '11']
+  ['210', '13', '199']
+one choice of 3-th roots:
+  ['38', '115', '1']
+  ['72', '0', '25']
+  ['15', '37', '101']
+
+========================================================================
+F_223: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_223 = GF(223) = GF(223^1)
+characteristic: 223
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 14
+U = 14
+V = 1
+magic square entries:
+  ['14', '208', '1']
+  ['210', '0', '13']
+  ['222', '15', '209']
+one choice of 3-th roots:
+  ['38', '108', '1']
+  ['32', '0', '90']
+  ['40', '25', '79']
+
+========================================================================
+F_227: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_227 = GF(227) = GF(227^1)
+characteristic: 227
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '223', '1']
+  ['225', '0', '2']
+  ['226', '4', '224']
+one choice of 3-th roots:
+  ['70', '95', '1']
+  ['141', '0', '86']
+  ['226', '132', '157']
+
+========================================================================
+F_229: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_229 = GF(229) = GF(229^1)
+characteristic: 229
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 16
+U = 16
+V = 1
+magic square entries:
+  ['16', '212', '1']
+  ['214', '0', '15']
+  ['228', '17', '213']
+one choice of 3-th roots:
+  ['104', '45', '1']
+  ['20', '0', '68']
+  ['95', '121', '33']
+
+========================================================================
+F_233: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_233 = GF(233) = GF(233^1)
+characteristic: 233
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '229', '1']
+  ['231', '0', '2']
+  ['232', '4', '230']
+one choice of 3-th roots:
+  ['35', '157', '1']
+  ['141', '0', '92']
+  ['232', '76', '198']
+
+========================================================================
+F_239: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_239 = GF(239) = GF(239^1)
+characteristic: 239
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '235', '1']
+  ['237', '0', '2']
+  ['238', '4', '236']
+one choice of 3-th roots:
+  ['50', '148', '1']
+  ['42', '0', '197']
+  ['238', '91', '189']
+
+========================================================================
+F_241: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_241 = GF(241) = GF(241^1)
+characteristic: 241
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 26
+U = 26
+V = 1
+magic square entries:
+  ['26', '214', '1']
+  ['216', '0', '25']
+  ['240', '27', '215']
+one choice of 3-th roots:
+  ['69', '48', '1']
+  ['6', '0', '96']
+  ['16', '3', '140']
+
+========================================================================
+F_243: non-3-Parker witness found (0.004s), mode=center_zero_line_M0(x)
+F_243 = GF(243) = GF(3^5)
+characteristic: 3
+field model: GF(243) = F_3[a]/(1 + 2*x + x^5)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '2 + 2*a', '1']
+  ['1 + 2*a', '0', '2 + a']
+  ['2', '1 + a', '2*a']
+one choice of 3-th roots:
+  ['2 + a + a^2 + 2*a^3 + 2*a^4', '2*a + 2*a^2 + a^3 + a^4', '1']
+  ['2 + 2*a + 2*a^2 + a^3 + a^4', '0', '1 + a + a^2 + 2*a^3 + 2*a^4']
+  ['2', 'a + a^2 + 2*a^3 + 2*a^4', '1 + 2*a + 2*a^2 + a^3 + a^4']
+
+========================================================================
+F_251: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_251 = GF(251) = GF(251^1)
+characteristic: 251
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '247', '1']
+  ['249', '0', '2']
+  ['250', '4', '248']
+one choice of 3-th roots:
+  ['121', '10', '1']
+  ['201', '0', '50']
+  ['250', '241', '130']
+
+========================================================================
+F_257: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_257 = GF(257) = GF(257^1)
+characteristic: 257
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '253', '1']
+  ['255', '0', '2']
+  ['256', '4', '254']
+one choice of 3-th roots:
+  ['147', '193', '1']
+  ['8', '0', '249']
+  ['256', '64', '110']
+
+========================================================================
+F_263: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_263 = GF(263) = GF(263^1)
+characteristic: 263
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '259', '1']
+  ['261', '0', '2']
+  ['262', '4', '260']
+one choice of 3-th roots:
+  ['102', '167', '1']
+  ['126', '0', '137']
+  ['262', '96', '161']
+
+========================================================================
+F_269: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_269 = GF(269) = GF(269^1)
+characteristic: 269
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '265', '1']
+  ['267', '0', '2']
+  ['268', '4', '266']
+one choice of 3-th roots:
+  ['102', '38', '1']
+  ['85', '0', '184']
+  ['268', '231', '167']
+
+========================================================================
+F_271: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_271 = GF(271) = GF(271^1)
+characteristic: 271
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '261', '1']
+  ['263', '0', '8']
+  ['270', '10', '262']
+one choice of 3-th roots:
+  ['34', '171', '1']
+  ['58', '0', '2']
+  ['29', '81', '132']
+
+========================================================================
+F_277: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_277 = GF(277) = GF(277^1)
+characteristic: 277
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 60
+U = 60
+V = 1
+magic square entries:
+  ['60', '216', '1']
+  ['218', '0', '59']
+  ['276', '61', '217']
+one choice of 3-th roots:
+  ['95', '6', '1']
+  ['16', '0', '83']
+  ['117', '135', '35']
+
+========================================================================
+F_281: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_281 = GF(281) = GF(281^1)
+characteristic: 281
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '277', '1']
+  ['279', '0', '2']
+  ['280', '4', '278']
+one choice of 3-th roots:
+  ['15', '170', '1']
+  ['162', '0', '119']
+  ['280', '111', '266']
+
+========================================================================
+F_283: non-3-Parker witness found (0.010s), mode=center_one_full_UV
+F_283 = GF(283) = GF(283^1)
+characteristic: 283
+exponent n: 3
+search mode: center_one_full_UV
+U = 28
+V = 31
+magic square entries:
+  ['29', '225', '32']
+  ['4', '1', '281']
+  ['253', '60', '256']
+one choice of 3-th roots:
+  ['127', '42', '140']
+  ['70', '1', '23']
+  ['38', '7', '135']
+
+========================================================================
+F_289: non-3-Parker witness found (0.002s), mode=center_zero_line_M0(x)
+F_289 = GF(289) = GF(17^2)
+characteristic: 17
+field model: GF(289) = F_17[a]/(3 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '13', '1']
+  ['15', '0', '2']
+  ['16', '4', '14']
+one choice of 3-th roots:
+  ['7', '4', '1']
+  ['9', '0', '8']
+  ['16', '13', '10']
+
+========================================================================
+F_293: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_293 = GF(293) = GF(293^1)
+characteristic: 293
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '289', '1']
+  ['291', '0', '2']
+  ['292', '4', '290']
+one choice of 3-th roots:
+  ['208', '26', '1']
+  ['248', '0', '45']
+  ['292', '267', '85']
+
+========================================================================
+F_307: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_307 = GF(307) = GF(307^1)
+characteristic: 307
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '303', '1']
+  ['305', '0', '2']
+  ['306', '4', '304']
+one choice of 3-th roots:
+  ['192', '59', '1']
+  ['15', '0', '52']
+  ['18', '141', '79']
+
+========================================================================
+F_311: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_311 = GF(311) = GF(311^1)
+characteristic: 311
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '307', '1']
+  ['309', '0', '2']
+  ['310', '4', '308']
+one choice of 3-th roots:
+  ['63', '152', '1']
+  ['266', '0', '45']
+  ['310', '159', '248']
+
+========================================================================
+F_313: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_313 = GF(313) = GF(313^1)
+characteristic: 313
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 6
+U = 6
+V = 1
+magic square entries:
+  ['6', '306', '1']
+  ['308', '0', '5']
+  ['312', '7', '307']
+one choice of 3-th roots:
+  ['13', '46', '1']
+  ['168', '0', '43']
+  ['99', '172', '35']
+
+========================================================================
+F_317: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_317 = GF(317) = GF(317^1)
+characteristic: 317
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '313', '1']
+  ['315', '0', '2']
+  ['316', '4', '314']
+one choice of 3-th roots:
+  ['78', '34', '1']
+  ['56', '0', '261']
+  ['316', '283', '239']
+
+========================================================================
+F_331: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_331 = GF(331) = GF(331^1)
+characteristic: 331
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 116
+U = 116
+V = 1
+magic square entries:
+  ['116', '214', '1']
+  ['216', '0', '115']
+  ['330', '117', '215']
+one choice of 3-th roots:
+  ['158', '84', '1']
+  ['6', '0', '145']
+  ['32', '40', '67']
+
+========================================================================
+F_337: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_337 = GF(337) = GF(337^1)
+characteristic: 337
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 6
+U = 6
+V = 1
+magic square entries:
+  ['6', '330', '1']
+  ['332', '0', '5']
+  ['336', '7', '331']
+one choice of 3-th roots:
+  ['7', '63', '1']
+  ['102', '0', '15']
+  ['129', '24', '115']
+
+========================================================================
+F_343: 3-PARKER / no normalized cube witness (0.088s)
+
+========================================================================
+F_347: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_347 = GF(347) = GF(347^1)
+characteristic: 347
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '343', '1']
+  ['345', '0', '2']
+  ['346', '4', '344']
+one choice of 3-th roots:
+  ['225', '7', '1']
+  ['149', '0', '198']
+  ['346', '340', '122']
+
+========================================================================
+F_349: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_349 = GF(349) = GF(349^1)
+characteristic: 349
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 36
+U = 36
+V = 1
+magic square entries:
+  ['36', '312', '1']
+  ['314', '0', '35']
+  ['348', '37', '313']
+one choice of 3-th roots:
+  ['45', '225', '1']
+  ['28', '0', '74']
+  ['123', '104', '94']
+
+========================================================================
+F_353: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_353 = GF(353) = GF(353^1)
+characteristic: 353
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '349', '1']
+  ['351', '0', '2']
+  ['352', '4', '350']
+one choice of 3-th roots:
+  ['114', '162', '1']
+  ['292', '0', '61']
+  ['352', '191', '239']
+
+========================================================================
+F_359: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_359 = GF(359) = GF(359^1)
+characteristic: 359
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '355', '1']
+  ['357', '0', '2']
+  ['358', '4', '356']
+one choice of 3-th roots:
+  ['214', '257', '1']
+  ['183', '0', '176']
+  ['358', '102', '145']
+
+========================================================================
+F_361: non-3-Parker witness found (0.002s), mode=center_zero_line_M0(x)
+F_361 = GF(361) = GF(19^2)
+characteristic: 19
+field model: GF(361) = F_19[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 6 + a
+U = 6 + a
+V = 1
+magic square entries:
+  ['6 + a', '12 + 18*a', '1']
+  ['14 + 18*a', '0', '5 + a']
+  ['18', '7 + a', '13 + 18*a']
+one choice of 3-th roots:
+  ['11 + a', '11 + 5*a', '1']
+  ['18 + 10*a', '0', '11 + 4*a']
+  ['8', '12 + 2*a', '12 + 8*a']
+
+========================================================================
+F_367: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_367 = GF(367) = GF(367^1)
+characteristic: 367
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 8
+U = 8
+V = 1
+magic square entries:
+  ['8', '358', '1']
+  ['360', '0', '7']
+  ['366', '9', '359']
+one choice of 3-th roots:
+  ['2', '176', '1']
+  ['172', '0', '37']
+  ['84', '72', '168']
+
+========================================================================
+F_373: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_373 = GF(373) = GF(373^1)
+characteristic: 373
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 18
+U = 18
+V = 1
+magic square entries:
+  ['18', '354', '1']
+  ['356', '0', '17']
+  ['372', '19', '355']
+one choice of 3-th roots:
+  ['15', '62', '1']
+  ['9', '0', '55']
+  ['89', '139', '172']
+
+========================================================================
+F_379: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_379 = GF(379) = GF(379^1)
+characteristic: 379
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 40
+U = 40
+V = 1
+magic square entries:
+  ['40', '338', '1']
+  ['340', '0', '39']
+  ['378', '41', '339']
+one choice of 3-th roots:
+  ['140', '117', '1']
+  ['59', '0', '23']
+  ['52', '20', '61']
+
+========================================================================
+F_383: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_383 = GF(383) = GF(383^1)
+characteristic: 383
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '379', '1']
+  ['381', '0', '2']
+  ['382', '4', '380']
+one choice of 3-th roots:
+  ['306', '233', '1']
+  ['240', '0', '143']
+  ['382', '150', '77']
+
+========================================================================
+F_389: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_389 = GF(389) = GF(389^1)
+characteristic: 389
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '385', '1']
+  ['387', '0', '2']
+  ['388', '4', '386']
+one choice of 3-th roots:
+  ['371', '122', '1']
+  ['338', '0', '51']
+  ['388', '267', '18']
+
+========================================================================
+F_397: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_397 = GF(397) = GF(397^1)
+characteristic: 397
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 16
+U = 16
+V = 1
+magic square entries:
+  ['16', '380', '1']
+  ['382', '0', '15']
+  ['396', '17', '381']
+one choice of 3-th roots:
+  ['31', '77', '1']
+  ['242', '0', '109']
+  ['35', '161', '137']
+
+========================================================================
+F_401: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_401 = GF(401) = GF(401^1)
+characteristic: 401
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '397', '1']
+  ['399', '0', '2']
+  ['400', '4', '398']
+one choice of 3-th roots:
+  ['304', '218', '1']
+  ['298', '0', '103']
+  ['400', '183', '97']
+
+========================================================================
+F_409: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_409 = GF(409) = GF(409^1)
+characteristic: 409
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 64
+U = 64
+V = 1
+magic square entries:
+  ['64', '344', '1']
+  ['346', '0', '63']
+  ['408', '65', '345']
+one choice of 3-th roots:
+  ['4', '111', '1']
+  ['37', '0', '84']
+  ['54', '252', '197']
+
+========================================================================
+F_419: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_419 = GF(419) = GF(419^1)
+characteristic: 419
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '415', '1']
+  ['417', '0', '2']
+  ['418', '4', '416']
+one choice of 3-th roots:
+  ['395', '182', '1']
+  ['198', '0', '221']
+  ['418', '237', '24']
+
+========================================================================
+F_421: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_421 = GF(421) = GF(421^1)
+characteristic: 421
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '413', '1']
+  ['415', '0', '6']
+  ['420', '8', '414']
+one choice of 3-th roots:
+  ['15', '42', '1']
+  ['52', '0', '223']
+  ['21', '2', '121']
+
+========================================================================
+F_431: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_431 = GF(431) = GF(431^1)
+characteristic: 431
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '427', '1']
+  ['429', '0', '2']
+  ['430', '4', '428']
+one choice of 3-th roots:
+  ['290', '419', '1']
+  ['359', '0', '72']
+  ['430', '12', '141']
+
+========================================================================
+F_433: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_433 = GF(433) = GF(433^1)
+characteristic: 433
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 74
+U = 74
+V = 1
+magic square entries:
+  ['74', '358', '1']
+  ['360', '0', '73']
+  ['432', '75', '359']
+one choice of 3-th roots:
+  ['41', '53', '1']
+  ['84', '0', '255']
+  ['199', '155', '109']
+
+========================================================================
+F_439: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_439 = GF(439) = GF(439^1)
+characteristic: 439
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '435', '1']
+  ['437', '0', '2']
+  ['438', '4', '436']
+one choice of 3-th roots:
+  ['87', '75', '1']
+  ['41', '0', '13']
+  ['172', '169', '38']
+
+========================================================================
+F_443: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_443 = GF(443) = GF(443^1)
+characteristic: 443
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '439', '1']
+  ['441', '0', '2']
+  ['442', '4', '440']
+one choice of 3-th roots:
+  ['236', '322', '1']
+  ['432', '0', '11']
+  ['442', '121', '207']
+
+========================================================================
+F_449: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_449 = GF(449) = GF(449^1)
+characteristic: 449
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '445', '1']
+  ['447', '0', '2']
+  ['448', '4', '446']
+one choice of 3-th roots:
+  ['42', '82', '1']
+  ['230', '0', '219']
+  ['448', '367', '407']
+
+========================================================================
+F_457: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_457 = GF(457) = GF(457^1)
+characteristic: 457
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 21
+U = 21
+V = 1
+magic square entries:
+  ['21', '435', '1']
+  ['437', '0', '20']
+  ['456', '22', '436']
+one choice of 3-th roots:
+  ['243', '91', '1']
+  ['164', '0', '40']
+  ['134', '236', '115']
+
+========================================================================
+F_461: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_461 = GF(461) = GF(461^1)
+characteristic: 461
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '457', '1']
+  ['459', '0', '2']
+  ['460', '4', '458']
+one choice of 3-th roots:
+  ['52', '158', '1']
+  ['426', '0', '35']
+  ['460', '303', '409']
+
+========================================================================
+F_463: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_463 = GF(463) = GF(463^1)
+characteristic: 463
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 56
+U = 56
+V = 1
+magic square entries:
+  ['56', '406', '1']
+  ['408', '0', '55']
+  ['462', '57', '407']
+one choice of 3-th roots:
+  ['193', '96', '1']
+  ['107', '0', '39']
+  ['22', '260', '79']
+
+========================================================================
+F_467: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_467 = GF(467) = GF(467^1)
+characteristic: 467
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '463', '1']
+  ['465', '0', '2']
+  ['466', '4', '464']
+one choice of 3-th roots:
+  ['28', '76', '1']
+  ['381', '0', '86']
+  ['466', '391', '439']
+
+========================================================================
+F_479: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_479 = GF(479) = GF(479^1)
+characteristic: 479
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '475', '1']
+  ['477', '0', '2']
+  ['478', '4', '476']
+one choice of 3-th roots:
+  ['365', '265', '1']
+  ['94', '0', '385']
+  ['478', '214', '114']
+
+========================================================================
+F_487: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_487 = GF(487) = GF(487^1)
+characteristic: 487
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 26
+U = 26
+V = 1
+magic square entries:
+  ['26', '460', '1']
+  ['462', '0', '25']
+  ['486', '27', '461']
+one choice of 3-th roots:
+  ['10', '212', '1']
+  ['92', '0', '8']
+  ['233', '3', '115']
+
+========================================================================
+F_491: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_491 = GF(491) = GF(491^1)
+characteristic: 491
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '487', '1']
+  ['489', '0', '2']
+  ['490', '4', '488']
+one choice of 3-th roots:
+  ['17', '335', '1']
+  ['107', '0', '384']
+  ['490', '156', '474']
+
+========================================================================
+F_499: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_499 = GF(499) = GF(499^1)
+characteristic: 499
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '495', '1']
+  ['497', '0', '2']
+  ['498', '4', '496']
+one choice of 3-th roots:
+  ['58', '28', '1']
+  ['107', '0', '10']
+  ['140', '100', '136']
+
+========================================================================
+F_503: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_503 = GF(503) = GF(503^1)
+characteristic: 503
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '499', '1']
+  ['501', '0', '2']
+  ['502', '4', '500']
+one choice of 3-th roots:
+  ['189', '239', '1']
+  ['362', '0', '141']
+  ['502', '264', '314']
+
+========================================================================
+F_509: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_509 = GF(509) = GF(509^1)
+characteristic: 509
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '505', '1']
+  ['507', '0', '2']
+  ['508', '4', '506']
+one choice of 3-th roots:
+  ['8', '420', '1']
+  ['366', '0', '143']
+  ['508', '89', '501']
+
+========================================================================
+F_521: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_521 = GF(521) = GF(521^1)
+characteristic: 521
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '517', '1']
+  ['519', '0', '2']
+  ['520', '4', '518']
+one choice of 3-th roots:
+  ['195', '433', '1']
+  ['296', '0', '225']
+  ['520', '88', '326']
+
+========================================================================
+F_523: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_523 = GF(523) = GF(523^1)
+characteristic: 523
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 42
+U = 42
+V = 1
+magic square entries:
+  ['42', '480', '1']
+  ['482', '0', '41']
+  ['522', '43', '481']
+one choice of 3-th roots:
+  ['151', '38', '1']
+  ['156', '0', '54']
+  ['61', '226', '320']
+
+========================================================================
+F_529: non-3-Parker witness found (0.004s), mode=center_zero_line_M0(x)
+F_529 = GF(529) = GF(23^2)
+characteristic: 23
+field model: GF(529) = F_23[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '19', '1']
+  ['21', '0', '2']
+  ['22', '4', '20']
+one choice of 3-th roots:
+  ['12', '20', '1']
+  ['7', '0', '16']
+  ['22', '3', '11']
+
+========================================================================
+F_541: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_541 = GF(541) = GF(541^1)
+characteristic: 541
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '533', '1']
+  ['535', '0', '6']
+  ['540', '8', '534']
+one choice of 3-th roots:
+  ['161', '260', '1']
+  ['167', '0', '70']
+  ['130', '2', '330']
+
+========================================================================
+F_547: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_547 = GF(547) = GF(547^1)
+characteristic: 547
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '537', '1']
+  ['539', '0', '8']
+  ['546', '10', '538']
+one choice of 3-th roots:
+  ['13', '17', '1']
+  ['82', '0', '2']
+  ['41', '150', '27']
+
+========================================================================
+F_557: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_557 = GF(557) = GF(557^1)
+characteristic: 557
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '553', '1']
+  ['555', '0', '2']
+  ['556', '4', '554']
+one choice of 3-th roots:
+  ['311', '448', '1']
+  ['465', '0', '92']
+  ['556', '109', '246']
+
+========================================================================
+F_563: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_563 = GF(563) = GF(563^1)
+characteristic: 563
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '559', '1']
+  ['561', '0', '2']
+  ['562', '4', '560']
+one choice of 3-th roots:
+  ['548', '216', '1']
+  ['318', '0', '245']
+  ['562', '347', '15']
+
+========================================================================
+F_569: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_569 = GF(569) = GF(569^1)
+characteristic: 569
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '565', '1']
+  ['567', '0', '2']
+  ['568', '4', '566']
+one choice of 3-th roots:
+  ['472', '411', '1']
+  ['36', '0', '533']
+  ['568', '158', '97']
+
+========================================================================
+F_571: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_571 = GF(571) = GF(571^1)
+characteristic: 571
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '563', '1']
+  ['565', '0', '6']
+  ['570', '8', '564']
+one choice of 3-th roots:
+  ['19', '220', '1']
+  ['104', '0', '20']
+  ['110', '2', '213']
+
+========================================================================
+F_577: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_577 = GF(577) = GF(577^1)
+characteristic: 577
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 87
+U = 87
+V = 1
+magic square entries:
+  ['87', '489', '1']
+  ['491', '0', '86']
+  ['576', '88', '490']
+one choice of 3-th roots:
+  ['267', '181', '1']
+  ['295', '0', '58']
+  ['214', '75', '15']
+
+========================================================================
+F_587: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_587 = GF(587) = GF(587^1)
+characteristic: 587
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '583', '1']
+  ['585', '0', '2']
+  ['586', '4', '584']
+one choice of 3-th roots:
+  ['311', '274', '1']
+  ['30', '0', '557']
+  ['586', '313', '276']
+
+========================================================================
+F_593: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_593 = GF(593) = GF(593^1)
+characteristic: 593
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '589', '1']
+  ['591', '0', '2']
+  ['592', '4', '590']
+one choice of 3-th roots:
+  ['195', '425', '1']
+  ['120', '0', '473']
+  ['592', '168', '398']
+
+========================================================================
+F_599: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_599 = GF(599) = GF(599^1)
+characteristic: 599
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '595', '1']
+  ['597', '0', '2']
+  ['598', '4', '596']
+one choice of 3-th roots:
+  ['566', '451', '1']
+  ['429', '0', '170']
+  ['598', '148', '33']
+
+========================================================================
+F_601: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_601 = GF(601) = GF(601^1)
+characteristic: 601
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 63
+U = 63
+V = 1
+magic square entries:
+  ['63', '537', '1']
+  ['539', '0', '62']
+  ['600', '64', '538']
+one choice of 3-th roots:
+  ['343', '100', '1']
+  ['88', '0', '292']
+  ['25', '4', '161']
+
+========================================================================
+F_607: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_607 = GF(607) = GF(607^1)
+characteristic: 607
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '599', '1']
+  ['601', '0', '6']
+  ['606', '8', '600']
+one choice of 3-th roots:
+  ['173', '187', '1']
+  ['288', '0', '68']
+  ['211', '2', '83']
+
+========================================================================
+F_613: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_613 = GF(613) = GF(613^1)
+characteristic: 613
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '603', '1']
+  ['605', '0', '8']
+  ['612', '10', '604']
+one choice of 3-th roots:
+  ['17', '356', '1']
+  ['132', '0', '2']
+  ['66', '154', '121']
+
+========================================================================
+F_617: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_617 = GF(617) = GF(617^1)
+characteristic: 617
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '613', '1']
+  ['615', '0', '2']
+  ['616', '4', '614']
+one choice of 3-th roots:
+  ['390', '51', '1']
+  ['242', '0', '375']
+  ['616', '566', '227']
+
+========================================================================
+F_619: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_619 = GF(619) = GF(619^1)
+characteristic: 619
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 43
+U = 43
+V = 1
+magic square entries:
+  ['43', '575', '1']
+  ['577', '0', '42']
+  ['618', '44', '576']
+one choice of 3-th roots:
+  ['153', '358', '1']
+  ['272', '0', '107']
+  ['253', '158', '331']
+
+========================================================================
+F_625: non-3-Parker witness found (0.008s), mode=center_zero_line_M0(x)
+F_625 = GF(625) = GF(5^4)
+characteristic: 5
+field model: GF(625) = F_5[a]/(2 + x^4)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 2 + 2*a + a^2 + a^3
+U = 2 + 2*a + a^2 + a^3
+V = 1
+magic square entries:
+  ['2 + 2*a + a^2 + a^3', '2 + 3*a + 4*a^2 + 4*a^3', '1']
+  ['4 + 3*a + 4*a^2 + 4*a^3', '0', '1 + 2*a + a^2 + a^3']
+  ['4', '3 + 2*a + a^2 + a^3', '3 + 3*a + 4*a^2 + 4*a^3']
+one choice of 3-th roots:
+  ['2 + 3*a + 3*a^3', '3 + 4*a', '1']
+  ['3 + a + a^2 + a^3', '0', '1 + 2*a^3']
+  ['4', '2 + a', '1 + 3*a^2 + a^3']
+
+========================================================================
+F_631: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_631 = GF(631) = GF(631^1)
+characteristic: 631
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 39
+U = 39
+V = 1
+magic square entries:
+  ['39', '591', '1']
+  ['593', '0', '38']
+  ['630', '40', '592']
+one choice of 3-th roots:
+  ['245', '277', '1']
+  ['36', '0', '322']
+  ['44', '78', '53']
+
+========================================================================
+F_641: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_641 = GF(641) = GF(641^1)
+characteristic: 641
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '637', '1']
+  ['639', '0', '2']
+  ['640', '4', '638']
+one choice of 3-th roots:
+  ['476', '400', '1']
+  ['125', '0', '516']
+  ['640', '241', '165']
+
+========================================================================
+F_643: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_643 = GF(643) = GF(643^1)
+characteristic: 643
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '639', '1']
+  ['641', '0', '2']
+  ['642', '4', '640']
+one choice of 3-th roots:
+  ['77', '48', '1']
+  ['134', '0', '61']
+  ['178', '185', '203']
+
+========================================================================
+F_647: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_647 = GF(647) = GF(647^1)
+characteristic: 647
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '643', '1']
+  ['645', '0', '2']
+  ['646', '4', '644']
+one choice of 3-th roots:
+  ['108', '482', '1']
+  ['298', '0', '349']
+  ['646', '165', '539']
+
+========================================================================
+F_653: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_653 = GF(653) = GF(653^1)
+characteristic: 653
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '649', '1']
+  ['651', '0', '2']
+  ['652', '4', '650']
+one choice of 3-th roots:
+  ['366', '47', '1']
+  ['528', '0', '125']
+  ['652', '606', '287']
+
+========================================================================
+F_659: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_659 = GF(659) = GF(659^1)
+characteristic: 659
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '655', '1']
+  ['657', '0', '2']
+  ['658', '4', '656']
+one choice of 3-th roots:
+  ['507', '215', '1']
+  ['282', '0', '377']
+  ['658', '444', '152']
+
+========================================================================
+F_661: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_661 = GF(661) = GF(661^1)
+characteristic: 661
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 8
+U = 8
+V = 1
+magic square entries:
+  ['8', '652', '1']
+  ['654', '0', '7']
+  ['660', '9', '653']
+one choice of 3-th roots:
+  ['2', '49', '1']
+  ['288', '0', '21']
+  ['297', '11', '69']
+
+========================================================================
+F_673: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_673 = GF(673) = GF(673^1)
+characteristic: 673
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 79
+U = 79
+V = 1
+magic square entries:
+  ['79', '593', '1']
+  ['595', '0', '78']
+  ['672', '80', '594']
+one choice of 3-th roots:
+  ['125', '277', '1']
+  ['100', '0', '26']
+  ['256', '30', '369']
+
+========================================================================
+F_677: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_677 = GF(677) = GF(677^1)
+characteristic: 677
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '673', '1']
+  ['675', '0', '2']
+  ['676', '4', '674']
+one choice of 3-th roots:
+  ['31', '81', '1']
+  ['443', '0', '234']
+  ['676', '596', '646']
+
+========================================================================
+F_683: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_683 = GF(683) = GF(683^1)
+characteristic: 683
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '679', '1']
+  ['681', '0', '2']
+  ['682', '4', '680']
+one choice of 3-th roots:
+  ['571', '427', '1']
+  ['16', '0', '667']
+  ['682', '256', '112']
+
+========================================================================
+F_691: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_691 = GF(691) = GF(691^1)
+characteristic: 691
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 20
+U = 20
+V = 1
+magic square entries:
+  ['20', '670', '1']
+  ['672', '0', '19']
+  ['690', '21', '671']
+one choice of 3-th roots:
+  ['101', '51', '1']
+  ['316', '0', '108']
+  ['254', '226', '14']
+
+========================================================================
+F_701: non-3-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_701 = GF(701) = GF(701^1)
+characteristic: 701
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '697', '1']
+  ['699', '0', '2']
+  ['700', '4', '698']
+one choice of 3-th roots:
+  ['278', '91', '1']
+  ['416', '0', '285']
+  ['700', '610', '423']
+
+========================================================================
+F_709: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_709 = GF(709) = GF(709^1)
+characteristic: 709
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 124
+U = 124
+V = 1
+magic square entries:
+  ['124', '584', '1']
+  ['586', '0', '123']
+  ['708', '125', '585']
+one choice of 3-th roots:
+  ['101', '283', '1']
+  ['212', '0', '88']
+  ['228', '5', '340']
+
+========================================================================
+F_719: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_719 = GF(719) = GF(719^1)
+characteristic: 719
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '715', '1']
+  ['717', '0', '2']
+  ['718', '4', '716']
+one choice of 3-th roots:
+  ['54', '398', '1']
+  ['607', '0', '112']
+  ['718', '321', '665']
+
+========================================================================
+F_727: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_727 = GF(727) = GF(727^1)
+characteristic: 727
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '723', '1']
+  ['725', '0', '2']
+  ['726', '4', '724']
+one choice of 3-th roots:
+  ['20', '305', '1']
+  ['357', '0', '9']
+  ['282', '81', '196']
+
+========================================================================
+F_729: non-3-Parker witness found (0.012s), mode=center_zero_line_M0(x)
+F_729 = GF(729) = GF(3^6)
+characteristic: 3
+field model: GF(729) = F_3[a]/(2 + x + x^6)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '2 + 2*a', '1']
+  ['1 + 2*a', '0', '2 + a']
+  ['2', '1 + a', '2*a']
+one choice of 3-th roots:
+  ['1 + 2*a^2', '1 + a^2', '1']
+  ['a^2', '0', '2*a^2']
+  ['2', '2 + 2*a^2', '2 + a^2']
+
+========================================================================
+F_733: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_733 = GF(733) = GF(733^1)
+characteristic: 733
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 39
+U = 39
+V = 1
+magic square entries:
+  ['39', '693', '1']
+  ['695', '0', '38']
+  ['732', '40', '694']
+one choice of 3-th roots:
+  ['128', '429', '1']
+  ['28', '0', '200']
+  ['308', '192', '286']
+
+========================================================================
+F_739: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_739 = GF(739) = GF(739^1)
+characteristic: 739
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 26
+U = 26
+V = 1
+magic square entries:
+  ['26', '712', '1']
+  ['714', '0', '25']
+  ['738', '27', '713']
+one choice of 3-th roots:
+  ['84', '224', '1']
+  ['311', '0', '66']
+  ['321', '3', '360']
+
+========================================================================
+F_743: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_743 = GF(743) = GF(743^1)
+characteristic: 743
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '739', '1']
+  ['741', '0', '2']
+  ['742', '4', '740']
+one choice of 3-th roots:
+  ['46', '378', '1']
+  ['629', '0', '114']
+  ['742', '365', '697']
+
+========================================================================
+F_751: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_751 = GF(751) = GF(751^1)
+characteristic: 751
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '743', '1']
+  ['745', '0', '6']
+  ['750', '8', '744']
+one choice of 3-th roots:
+  ['99', '146', '1']
+  ['436', '0', '150']
+  ['73', '2', '382']
+
+========================================================================
+F_757: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_757 = GF(757) = GF(757^1)
+characteristic: 757
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 27
+U = 27
+V = 1
+magic square entries:
+  ['27', '729', '1']
+  ['731', '0', '26']
+  ['756', '28', '730']
+one choice of 3-th roots:
+  ['3', '9', '1']
+  ['207', '0', '467']
+  ['28', '252', '84']
+
+========================================================================
+F_761: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_761 = GF(761) = GF(761^1)
+characteristic: 761
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '757', '1']
+  ['759', '0', '2']
+  ['760', '4', '758']
+one choice of 3-th roots:
+  ['430', '385', '1']
+  ['85', '0', '676']
+  ['760', '376', '331']
+
+========================================================================
+F_769: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_769 = GF(769) = GF(769^1)
+characteristic: 769
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 26
+U = 26
+V = 1
+magic square entries:
+  ['26', '742', '1']
+  ['744', '0', '25']
+  ['768', '27', '743']
+one choice of 3-th roots:
+  ['70', '314', '1']
+  ['172', '0', '369']
+  ['361', '3', '177']
+
+========================================================================
+F_773: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_773 = GF(773) = GF(773^1)
+characteristic: 773
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '769', '1']
+  ['771', '0', '2']
+  ['772', '4', '770']
+one choice of 3-th roots:
+  ['128', '549', '1']
+  ['421', '0', '352']
+  ['772', '224', '645']
+
+========================================================================
+F_787: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_787 = GF(787) = GF(787^1)
+characteristic: 787
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 71
+U = 71
+V = 1
+magic square entries:
+  ['71', '715', '1']
+  ['717', '0', '70']
+  ['786', '72', '716']
+one choice of 3-th roots:
+  ['425', '99', '1']
+  ['88', '0', '386']
+  ['380', '255', '165']
+
+========================================================================
+F_797: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_797 = GF(797) = GF(797^1)
+characteristic: 797
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '793', '1']
+  ['795', '0', '2']
+  ['796', '4', '794']
+one choice of 3-th roots:
+  ['290', '499', '1']
+  ['230', '0', '567']
+  ['796', '298', '507']
+
+========================================================================
+F_809: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_809 = GF(809) = GF(809^1)
+characteristic: 809
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '805', '1']
+  ['807', '0', '2']
+  ['808', '4', '806']
+one choice of 3-th roots:
+  ['749', '393', '1']
+  ['35', '0', '774']
+  ['808', '416', '60']
+
+========================================================================
+F_811: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_811 = GF(811) = GF(811^1)
+characteristic: 811
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 15
+U = 15
+V = 1
+magic square entries:
+  ['15', '795', '1']
+  ['797', '0', '14']
+  ['810', '16', '796']
+one choice of 3-th roots:
+  ['47', '349', '1']
+  ['41', '0', '347']
+  ['131', '46', '378']
+
+========================================================================
+F_821: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_821 = GF(821) = GF(821^1)
+characteristic: 821
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '817', '1']
+  ['819', '0', '2']
+  ['820', '4', '818']
+one choice of 3-th roots:
+  ['359', '691', '1']
+  ['581', '0', '240']
+  ['820', '130', '462']
+
+========================================================================
+F_823: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_823 = GF(823) = GF(823^1)
+characteristic: 823
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 26
+U = 26
+V = 1
+magic square entries:
+  ['26', '796', '1']
+  ['798', '0', '25']
+  ['822', '27', '797']
+one choice of 3-th roots:
+  ['181', '301', '1']
+  ['17', '0', '334']
+  ['175', '3', '401']
+
+========================================================================
+F_827: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_827 = GF(827) = GF(827^1)
+characteristic: 827
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '823', '1']
+  ['825', '0', '2']
+  ['826', '4', '824']
+one choice of 3-th roots:
+  ['44', '180', '1']
+  ['340', '0', '487']
+  ['826', '647', '783']
+
+========================================================================
+F_829: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_829 = GF(829) = GF(829^1)
+characteristic: 829
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 11
+U = 11
+V = 1
+magic square entries:
+  ['11', '817', '1']
+  ['819', '0', '10']
+  ['828', '12', '818']
+one choice of 3-th roots:
+  ['51', '121', '1']
+  ['231', '0', '91']
+  ['126', '324', '257']
+
+========================================================================
+F_839: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_839 = GF(839) = GF(839^1)
+characteristic: 839
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '835', '1']
+  ['837', '0', '2']
+  ['838', '4', '836']
+one choice of 3-th roots:
+  ['324', '409', '1']
+  ['679', '0', '160']
+  ['838', '430', '515']
+
+========================================================================
+F_841: non-3-Parker witness found (0.006s), mode=center_zero_line_M0(x)
+F_841 = GF(841) = GF(29^2)
+characteristic: 29
+field model: GF(841) = F_29[a]/(2 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '25', '1']
+  ['27', '0', '2']
+  ['28', '4', '26']
+one choice of 3-th roots:
+  ['18', '20', '1']
+  ['3', '0', '26']
+  ['28', '9', '11']
+
+========================================================================
+F_853: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_853 = GF(853) = GF(853^1)
+characteristic: 853
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 8
+U = 8
+V = 1
+magic square entries:
+  ['8', '844', '1']
+  ['846', '0', '7']
+  ['852', '9', '845']
+one choice of 3-th roots:
+  ['2', '234', '1']
+  ['325', '0', '152']
+  ['221', '534', '413']
+
+========================================================================
+F_857: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_857 = GF(857) = GF(857^1)
+characteristic: 857
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '853', '1']
+  ['855', '0', '2']
+  ['856', '4', '854']
+one choice of 3-th roots:
+  ['19', '477', '1']
+  ['645', '0', '212']
+  ['856', '380', '838']
+
+========================================================================
+F_859: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_859 = GF(859) = GF(859^1)
+characteristic: 859
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 35
+U = 35
+V = 1
+magic square entries:
+  ['35', '823', '1']
+  ['825', '0', '34']
+  ['858', '36', '824']
+one choice of 3-th roots:
+  ['389', '264', '1']
+  ['49', '0', '145']
+  ['261', '80', '167']
+
+========================================================================
+F_863: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_863 = GF(863) = GF(863^1)
+characteristic: 863
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '859', '1']
+  ['861', '0', '2']
+  ['862', '4', '860']
+one choice of 3-th roots:
+  ['366', '719', '1']
+  ['851', '0', '12']
+  ['862', '144', '497']
+
+========================================================================
+F_877: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_877 = GF(877) = GF(877^1)
+characteristic: 877
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 27
+U = 27
+V = 1
+magic square entries:
+  ['27', '849', '1']
+  ['851', '0', '26']
+  ['876', '28', '850']
+one choice of 3-th roots:
+  ['3', '413', '1']
+  ['12', '0', '124']
+  ['283', '175', '31']
+
+========================================================================
+F_881: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_881 = GF(881) = GF(881^1)
+characteristic: 881
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '877', '1']
+  ['879', '0', '2']
+  ['880', '4', '878']
+one choice of 3-th roots:
+  ['151', '788', '1']
+  ['521', '0', '360']
+  ['880', '93', '730']
+
+========================================================================
+F_883: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_883 = GF(883) = GF(883^1)
+characteristic: 883
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 46
+U = 46
+V = 1
+magic square entries:
+  ['46', '836', '1']
+  ['838', '0', '45']
+  ['882', '47', '837']
+one choice of 3-th roots:
+  ['174', '311', '1']
+  ['471', '0', '213']
+  ['338', '41', '523']
+
+========================================================================
+F_887: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_887 = GF(887) = GF(887^1)
+characteristic: 887
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '883', '1']
+  ['885', '0', '2']
+  ['886', '4', '884']
+one choice of 3-th roots:
+  ['708', '865', '1']
+  ['645', '0', '242']
+  ['886', '22', '179']
+
+========================================================================
+F_907: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_907 = GF(907) = GF(907^1)
+characteristic: 907
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 11
+U = 11
+V = 1
+magic square entries:
+  ['11', '895', '1']
+  ['897', '0', '10']
+  ['906', '12', '896']
+one choice of 3-th roots:
+  ['366', '76', '1']
+  ['180', '0', '368']
+  ['385', '236', '41']
+
+========================================================================
+F_911: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_911 = GF(911) = GF(911^1)
+characteristic: 911
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '907', '1']
+  ['909', '0', '2']
+  ['910', '4', '908']
+one choice of 3-th roots:
+  ['367', '254', '1']
+  ['538', '0', '373']
+  ['910', '657', '544']
+
+========================================================================
+F_919: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_919 = GF(919) = GF(919^1)
+characteristic: 919
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '915', '1']
+  ['917', '0', '2']
+  ['918', '4', '916']
+one choice of 3-th roots:
+  ['436', '41', '1']
+  ['406', '0', '25']
+  ['53', '335', '133']
+
+========================================================================
+F_929: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_929 = GF(929) = GF(929^1)
+characteristic: 929
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '925', '1']
+  ['927', '0', '2']
+  ['928', '4', '926']
+one choice of 3-th roots:
+  ['109', '376', '1']
+  ['845', '0', '84']
+  ['928', '553', '820']
+
+========================================================================
+F_937: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_937 = GF(937) = GF(937^1)
+characteristic: 937
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 64
+U = 64
+V = 1
+magic square entries:
+  ['64', '872', '1']
+  ['874', '0', '63']
+  ['936', '65', '873']
+one choice of 3-th roots:
+  ['4', '448', '1']
+  ['419', '0', '10']
+  ['323', '42', '355']
+
+========================================================================
+F_941: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_941 = GF(941) = GF(941^1)
+characteristic: 941
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '937', '1']
+  ['939', '0', '2']
+  ['940', '4', '938']
+one choice of 3-th roots:
+  ['495', '152', '1']
+  ['681', '0', '260']
+  ['940', '789', '446']
+
+========================================================================
+F_947: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_947 = GF(947) = GF(947^1)
+characteristic: 947
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '943', '1']
+  ['945', '0', '2']
+  ['946', '4', '944']
+one choice of 3-th roots:
+  ['168', '50', '1']
+  ['644', '0', '303']
+  ['946', '897', '779']
+
+========================================================================
+F_953: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_953 = GF(953) = GF(953^1)
+characteristic: 953
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '949', '1']
+  ['951', '0', '2']
+  ['952', '4', '950']
+one choice of 3-th roots:
+  ['152', '284', '1']
+  ['651', '0', '302']
+  ['952', '669', '801']
+
+========================================================================
+F_961: non-3-Parker witness found (0.006s), mode=center_zero_line_M0(x)
+F_961 = GF(961) = GF(31^2)
+characteristic: 31
+field model: GF(961) = F_31[a]/(1 + x^2)
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '30 + 30*a', '1']
+  ['1 + 30*a', '0', '30 + a']
+  ['30', '1 + a', '30*a']
+one choice of 3-th roots:
+  ['6*a', '14 + 17*a', '1']
+  ['17 + 17*a', '0', '8 + 8*a']
+  ['6', '23 + 8*a', 'a']
+
+========================================================================
+F_967: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_967 = GF(967) = GF(967^1)
+characteristic: 967
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '957', '1']
+  ['959', '0', '8']
+  ['966', '10', '958']
+one choice of 3-th roots:
+  ['200', '441', '1']
+  ['286', '0', '2']
+  ['143', '208', '557']
+
+========================================================================
+F_971: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_971 = GF(971) = GF(971^1)
+characteristic: 971
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '967', '1']
+  ['969', '0', '2']
+  ['970', '4', '968']
+one choice of 3-th roots:
+  ['696', '570', '1']
+  ['678', '0', '293']
+  ['970', '401', '275']
+
+========================================================================
+F_977: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_977 = GF(977) = GF(977^1)
+characteristic: 977
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '973', '1']
+  ['975', '0', '2']
+  ['976', '4', '974']
+one choice of 3-th roots:
+  ['151', '157', '1']
+  ['865', '0', '112']
+  ['976', '820', '826']
+
+========================================================================
+F_983: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_983 = GF(983) = GF(983^1)
+characteristic: 983
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '979', '1']
+  ['981', '0', '2']
+  ['982', '4', '980']
+one choice of 3-th roots:
+  ['777', '694', '1']
+  ['17', '0', '966']
+  ['982', '289', '206']
+
+========================================================================
+F_991: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_991 = GF(991) = GF(991^1)
+characteristic: 991
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 78
+U = 78
+V = 1
+magic square entries:
+  ['78', '912', '1']
+  ['914', '0', '77']
+  ['990', '79', '913']
+one choice of 3-th roots:
+  ['184', '140', '1']
+  ['410', '0', '163']
+  ['114', '36', '19']
+
+========================================================================
+F_997: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_997 = GF(997) = GF(997^1)
+characteristic: 997
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '993', '1']
+  ['995', '0', '2']
+  ['996', '4', '994']
+one choice of 3-th roots:
+  ['10', '327', '1']
+  ['239', '0', '114']
+  ['305', '35', '59']
+
+========================================================================
+F_1009: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1009 = GF(1009) = GF(1009^1)
+characteristic: 1009
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 43
+U = 43
+V = 1
+magic square entries:
+  ['43', '965', '1']
+  ['967', '0', '42']
+  ['1008', '44', '966']
+one choice of 3-th roots:
+  ['276', '61', '1']
+  ['625', '0', '287']
+  ['375', '393', '582']
+
+========================================================================
+F_1013: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1013 = GF(1013) = GF(1013^1)
+characteristic: 1013
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '1009', '1']
+  ['1011', '0', '2']
+  ['1012', '4', '1010']
+one choice of 3-th roots:
+  ['37', '704', '1']
+  ['377', '0', '636']
+  ['1012', '309', '976']
+
+========================================================================
+F_1019: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1019 = GF(1019) = GF(1019^1)
+characteristic: 1019
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '1015', '1']
+  ['1017', '0', '2']
+  ['1018', '4', '1016']
+one choice of 3-th roots:
+  ['856', '270', '1']
+  ['234', '0', '785']
+  ['1018', '749', '163']
+
+========================================================================
+F_1021: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1021 = GF(1021) = GF(1021^1)
+characteristic: 1021
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '1017', '1']
+  ['1019', '0', '2']
+  ['1020', '4', '1018']
+one choice of 3-th roots:
+  ['251', '244', '1']
+  ['474', '0', '159']
+  ['369', '56', '543']
+
+========================================================================
+F_1031: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1031 = GF(1031) = GF(1031^1)
+characteristic: 1031
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '1027', '1']
+  ['1029', '0', '2']
+  ['1030', '4', '1028']
+one choice of 3-th roots:
+  ['917', '354', '1']
+  ['233', '0', '798']
+  ['1030', '677', '114']
+
+========================================================================
+F_1033: non-3-Parker witness found (0.001s), mode=center_zero_line_M0(x)
+F_1033 = GF(1033) = GF(1033^1)
+characteristic: 1033
+exponent n: 3
+search mode: center_zero_line_M0(x)
+x = 7
+U = 7
+V = 1
+magic square entries:
+  ['7', '1025', '1']
+  ['1027', '0', '6']
+  ['1032', '8', '1026']
+one choice of 3-th roots:
+  ['50', '392', '1']
+  ['443', '0', '56']
+  ['196', '2', '503']
+
+========================================================================
+SUMMARY
+========================================================================
+total time: 0.242s
+non-3-Parker odd fields: [9, 11, 17, 23, 27, 29, 41, 47, 49, 53, 59, 71, 73, 81, 83, 89, 97, 101, 103, 107, 109, 113, 121, 125, 131, 137, 139, 149, 151, 157, 163, 167, 169, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 243, 251, 257, 263, 269, 271, 277, 281, 283, 289, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 361, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 529, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 625, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 729, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 841, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 961, 967, 971, 977, 983, 991, 997, 1009, 1013, 1019, 1021, 1031, 1033]
+3-Parker odd fields: [3, 5, 7, 13, 19, 25, 31, 37, 43, 61, 67, 79, 127, 343]
+
+Note: characteristic two is excluded here; in characteristic two every 3x3
+magic square has repeated entries, so the distinct-entry problem has permanent
+obstructions there.

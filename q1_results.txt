@@ -1,0 +1,155 @@
+q ≡ 1 (mod 4) square-field verification
+==========================================
+bound: Q < 77
+exponent n: 2
+orders: [5, 9, 13, 17, 25, 29, 37, 41, 49, 53, 61, 73]
+
+
+========================================================================
+F_5: PARKER / no normalized square witness (0.000s)
+
+========================================================================
+F_9: PARKER / no normalized square witness (0.000s)
+
+========================================================================
+F_13: PARKER / no normalized square witness (0.000s)
+
+========================================================================
+F_17: PARKER / no normalized square witness (0.000s)
+
+========================================================================
+F_25: PARKER / no normalized square witness (0.001s)
+
+========================================================================
+F_29: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_29 = GF(29) = GF(29^1)
+characteristic: 29
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 5
+U = 5
+V = 1
+magic square entries:
+  ['5', '23', '1']
+  ['25', '0', '4']
+  ['28', '6', '24']
+one choice of 2-th roots:
+  ['11', '9', '1']
+  ['5', '0', '2']
+  ['12', '8', '13']
+
+========================================================================
+F_37: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_37 = GF(37) = GF(37^1)
+characteristic: 37
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 10
+U = 10
+V = 1
+magic square entries:
+  ['10', '26', '1']
+  ['28', '0', '9']
+  ['36', '11', '27']
+one choice of 2-th roots:
+  ['11', '10', '1']
+  ['18', '0', '3']
+  ['6', '14', '8']
+
+========================================================================
+F_41: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_41 = GF(41) = GF(41^1)
+characteristic: 41
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 9
+U = 9
+V = 1
+magic square entries:
+  ['9', '31', '1']
+  ['33', '0', '8']
+  ['40', '10', '32']
+one choice of 2-th roots:
+  ['3', '20', '1']
+  ['19', '0', '7']
+  ['9', '16', '14']
+
+========================================================================
+F_49: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_49 = GF(49) = GF(7^2)
+characteristic: 7
+field model: GF(49) = F_7[a]/(1 + x^2)
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = a
+U = a
+V = 1
+magic square entries:
+  ['a', '6 + 6*a', '1']
+  ['1 + 6*a', '0', '6 + a']
+  ['6', '1 + a', '6*a']
+one choice of 2-th roots:
+  ['2 + 2*a', '1 + 3*a', '1']
+  ['3 + a', '0', '6 + 3*a']
+  ['a', '4 + a', '5 + 2*a']
+
+========================================================================
+F_53: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_53 = GF(53) = GF(53^1)
+characteristic: 53
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 10
+U = 10
+V = 1
+magic square entries:
+  ['10', '42', '1']
+  ['44', '0', '9']
+  ['52', '11', '43']
+one choice of 2-th roots:
+  ['13', '25', '1']
+  ['16', '0', '3']
+  ['23', '8', '19']
+
+========================================================================
+F_61: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_61 = GF(61) = GF(61^1)
+characteristic: 61
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 4
+U = 4
+V = 1
+magic square entries:
+  ['4', '56', '1']
+  ['58', '0', '3']
+  ['60', '5', '57']
+one choice of 2-th roots:
+  ['2', '19', '1']
+  ['27', '0', '8']
+  ['11', '26', '22']
+
+========================================================================
+F_73: non-Parker witness found (0.000s), mode=center_zero_line_M0(x)
+F_73 = GF(73) = GF(73^1)
+characteristic: 73
+exponent n: 2
+search mode: center_zero_line_M0(x)
+x = 3
+U = 3
+V = 1
+magic square entries:
+  ['3', '69', '1']
+  ['71', '0', '2']
+  ['72', '4', '70']
+one choice of 2-th roots:
+  ['21', '19', '1']
+  ['12', '0', '32']
+  ['27', '2', '17']
+
+========================================================================
+SUMMARY
+========================================================================
+total time: 0.005s
+non-Parker fields: [29, 37, 41, 49, 53, 61, 73]
+Parker fields: [5, 9, 13, 17, 25]
