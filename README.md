@@ -120,3 +120,7 @@ $$\mathbb F_{27},\mathbb F_{243},\mathbb F_{343},\ldots.$$
 ## Citation
 
 If using this repository, please cite the accompanying paper.
+
+## Code provenance and verification
+
+The Python scripts in this repository were developed with assistance from ChatGPT. The mathematical approach, implementation details, and computational outputs were reviewed and verified by David Lai. The repository is intended to provide reproducible computational support for the accompanying paper.
