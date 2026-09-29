@@ -1,0 +1,2032 @@
+%
+% This example is based on:
+% http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Theorems.html
+%
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amssymb,geometry,graphicx,tikz,hyperref,booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\hypersetup{hidelinks}
+\geometry{letterpaper, margin=1in}
+\usetikzlibrary{angles,quotes,angles,calc}
+
+\title{Magic Squares of Squares over Finite Fields and an Extension to Arbitrary Powers}
+\author{David Lai}
+
+\newcommand{\p}[1]{\left( #1 \right)}
+\newcommand{\mb}{\mathbb}
+\newcommand{\mc}{\mathcal}
+\renewcommand{\qed}{\hfill \( \blacksquare \)}
+\newcommand{\image}[2]{\begin{center}\includegraphics[scale = #1]{#2} \end{center}}
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+\newcommand{\natz}{\mathbb{N}_{\geq 0}}
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+\newcommand{\conj}[1]{\overline #1}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\erf}{erf}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Zi}{\mathbb Z[i]}
+\newcommand{\Norm}{\operatorname{N}}
+\newcommand{\Arg}{\operatorname{arg}}
+\newcommand{\Area}{\operatorname{Area}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem*{example}{Example}
+\newtheorem*{definition}{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+
+\counterwithin{theorem}{section}
+\counterwithin{lemma}{section}
+\numberwithin{equation}{section}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The classical magic square of squares problem asks whether there is a
+\(3\times 3\) magic square whose nine entries are distinct integer squares. This
+problem is still open. Cain studied finite analogues over finite fields and
+conjectured exact lists of the finite fields in which no such square exists.
+This paper uses Weil's bound for multiplicative character sums to prove explicit
+field-size bounds above which magic squares of distinct squares must exist. The
+main ingredients are the universal parametrization of \(3\times 3\) magic
+squares, quadratic characters, and the split between the center-zero and
+center-one constructions. Combining these estimates with finite searches gives a
+classification of Parker finite fields of odd order. The final sections extend the same idea
+to arbitrary fixed powers, showing that for each fixed exponent \(n\), only
+finitely many finite fields of odd characteristic fail to contain a distinct
+magic square of \(n\)-th powers.
+\end{abstract}
+
+\tableofcontents
+
+\section{Magic Square Introduction}
+
+A \emph{magic square} is an array of numbers in which each row, each column, and
+both diagonals have the same sum. A \(3\times3\) magic square has the form
+\[
+\begin{array}{|c|c|c|}
+\hline
+A & B & C \\
+\hline
+D & E & F \\
+\hline
+G & H & I \\
+\hline
+\end{array}
+\]
+
+with
+\[
+A+B+C=D+E+F=G+H+I=A+D+G=B+E+H=C+F+I=A+E+I=C+E+G.
+\]
+The common value is called the \emph{magic sum}.
+
+The famous unsolved problem is the following.
+
+\begin{quote}
+Does there exist a \(3\times3\) magic square whose nine entries are distinct
+integer squares?
+\end{quote}
+
+That is, can we find integers \(a_1,\dots,a_9\) such that
+\[
+\begin{array}{|c|c|c|}
+\hline
+a_1^2&a_2^2&a_3^2\\
+\hline
+a_4^2&a_5^2&a_6^2\\
+\hline
+a_7^2&a_8^2&a_9^2 \\
+\hline
+\end{array}
+\]
+is magic and has nine distinct entries? No example is known, and no proof of
+impossibility is known. \cite{guyUnsolvedProblems}
+
+Cain's paper \cite{cain} studies finite analogues of this problem. Instead of
+working over the integers, one may work over a finite field \(\F_q\) where \(q=p^k\) is a prime power. Here \(p\) is the characteristic prime and \(k\geq1\). The terminology and motivation are also connected to Numberphile’s
+expository videos on the original Parker square and its finite-field version. \cite{numberphileParkerSquare, numberphileFiniteFields}. Residue-theoretic
+approaches to the magic square of squares have also been studied by Woll \cite{wollResidue}. The finite problem is no longer open-ended: for each
+fixed finite field, one can in principle check all possibilities.
+The goal is to use Weil's bound to prove an explicit field-size bound above which all finite fields contain a magic square of distinct squares, and then to check the remaining finite fields directly.
+
+\section{The universal form of a \(3\times 3\) magic square}
+
+The most useful starting point is a simple parametrization.
+
+\begin{theorem}
+The magic sum of any \(3\times 3\) magic square is equal to three times the middle entry. \label{magic_square_sum}
+\end{theorem}
+\begin{proof}
+    Let a magic square be of the form
+    \[
+    \begin{array}{|c|c|c|}
+    \hline
+    A & B & C \\
+    \hline
+    D & E & F \\
+    \hline
+    G & H & I \\
+    \hline
+    \end{array}
+    \]
+    Let $S$ be the sum of the magic square. First we sum up all the rows. This contributes three copies of the magic sum:
+\[
+(A+B+C)+(D+E+F)+(G+H+I)=3S.
+\]
+
+    Now add all four magic sums involving the center entry \(E\):
+\[
+(A+E+I)+(B+E+H)+(C+E+G)+(D+E+F)=4S.
+\]
+
+    Subtracting the first equation from the second gives \(3E=S\), as desired.
+\end{proof}
+
+Since all sums give the same sum, if we write \(A=E+U\) for some element \(U\), then we can easily show that $I=E-U$ because of this property. By also writing \(C=E+V\) for some element \(V\), we can then complete the magic square.
+
+\begin{proposition}[Universal form]
+Over any commutative ring, every \(3\times3\) magic square can be written as
+\[
+M(E,U,V)=
+\begin{array}{|c|c|c|}
+\hline
+E+U & E-U-V & E+V\\
+\hline
+E-U+V & E & E+U-V\\
+\hline
+E-V & E+U+V & E-U\\
+\hline
+\end{array}
+\]
+for some elements \(E,U,V\). Conversely, every array of this form is a magic
+square, with magic sum \(3E\).
+\end{proposition}
+
+\begin{proof}
+Let the center be \(E\). In any \(3\times3\) magic square, the common magic sum
+is \(3E\).
+
+Therefore opposite entries add to \(2E\):
+\[
+A+I=B+H=C+G=D+F=2E.
+\]
+Choose
+\[
+U=A-E,\qquad V=C-E.
+\]
+Then \(A=E+U\), \(I=E-U\), \(C=E+V\), and \(G=E-V\). The remaining entries are
+then forced by the row and column sums, giving the displayed formula. A direct
+check shows every array of that form is magic.
+\end{proof}
+
+Thus the square-of-squares problem becomes:
+
+\begin{quote}
+Can we choose \(E,U,V\) so that all nine entries of \(M(E,U,V)\) are distinct
+squares?
+\end{quote}
+
+\section{Squares in finite fields}
+
+\begin{definition}
+Let \(R\) be a commutative ring. An element \(x\in R\) is a \emph{square} if
+there is some \(a\in R\) with \(a^2=x\).
+\end{definition}
+
+For example, in \(\F_q\), this means that \(x=a^2\) for some \(a\in\F_q\). We count \(0\) as a square, since
+\(0=0^2\).
+
+\begin{definition}
+A finite field \(\F_q\) is called \emph{Parker} if there is no \(3\times3\)
+magic square of nine distinct squares over \(\F_q\).
+\end{definition}
+
+So the finite problem asks: which finite fields are Parker?
+
+\section{Magic Squares of Center Zero and Center One}
+
+The following two examples, over \(\F_{29}\) and \(\F_{59}\), illustrate the two constructions that will be used below.
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+9^2 & 11^2 & 1^2\\
+\hline
+6^2 & 0^2 & 14^2\\
+\hline
+12^2 & 16^2 & 8^2\\
+\hline
+\end{array}
+\quad
+\begin{array}{|c|c|c|}
+\hline
+20^2 & 12^2 & 7^2\\
+\hline
+2^2 & 1^2 & 23^2\\
+\hline
+22^2 & 25^2 & 29^2\\
+\hline
+\end{array}
+\]
+
+Multiplying out the squares and choosing convenient representatives in \(\F_{29}\) and \(\F_{59}\), we obtain the following equivalent magic squares.
+\[
+\begin{array}{|c|c|c|}
+\hline
+-6 & 5 & 1\\
+\hline
+7 & 0 & -7\\
+\hline
+-1 & -5 & 6\\
+\hline
+\end{array}
+\quad
+\begin{array}{|c|c|c|}
+\hline
+-13 & 26 & -10\\
+\hline
+4 & 1 & -2\\
+\hline
+12 & -24 & 15\\
+\hline
+\end{array}
+\]
+
+A center-zero magic square is especially useful when \(-1\) is itself a square, because then changing signs preserves the square condition. We will focus on center-zero and center-one variants for the finite-field argument.
+
+Let \(\F_q\) be a finite field of odd order. If the center \(E\) is zero, the
+magic square has the form
+\[
+M(0,U,V)=
+\begin{array}{|c|c|c|}
+\hline
+U & -U-V & V\\
+\hline
+-U+V & 0 & U-V\\
+\hline
+-V & U+V & -U\\
+\hline
+\end{array}.
+\]
+If the center \(E\) is nonzero and is itself a square, then scaling the square by
+\(E^{-1}\) preserves the property of being a square and normalizes the center to
+\(1\). This gives the center-one form
+\[
+M(1,U,V)=
+\begin{array}{|c|c|c|}
+\hline
+1+U & 1-U-V & 1+V\\
+\hline
+1-U+V & 1 & 1+U-V\\
+\hline
+1-V & 1+U+V & 1-U\\
+\hline
+\end{array}.
+\]
+These two forms are the key finite-field cases.
+
+\subsection{\(-1\) as a square in odd finite fields}
+
+In an odd finite field \(\F_q\), whether \(-1\) is a square is crucial. The finite-field version of the familiar prime-field criterion is
+\[
+-1\in(\F_q^\times)^2 \quad\Longleftrightarrow\quad q\equiv1\pmod4.
+\]
+When \(q=p\) is prime, this specializes to Euler's criterion
+\[
+-1\text{ is a square in }\F_p \quad\Longleftrightarrow\quad p\equiv1\pmod4.
+\]
+
+Thus the center-zero form is promising when \(q\equiv1\pmod4\). When \(q\equiv3\pmod4\), the sign changes in the center-zero square are obstructive, so we use the center-one construction instead.
+
+\section{Quadratic characters and Weil's bound}
+
+The main theorem that we use is Weil's bound for complete multiplicative character sums.
+\begin{theorem}[Weil's bound]
+\label{weil}
+\cite[Theorem 5.41]{LidlNiederreiterFiniteFields}: If
+\(\psi\) is a nontrivial multiplicative character of \(\F_q\)
+and \(f\in \F_q[x]\) is not a power corresponding to the order
+of \(\psi\), then
+\[
+\left|\sum_{x\in\F_q}\psi(f(x))\right|
+\le (d-1)\sqrt q,
+\]
+where \(d\) is the number of distinct roots of \(f\) over
+\(\overline{\F_q}\). In particular, if \(f\) is square-free of
+degree \(d\), then the above inequality holds.
+\end{theorem}
+
+Throughout the first half of the paper, we use the quadratic character \(\chi\), which is a nontrivial multiplicative character of order \(2\). We now introduce the basic facts about \(\chi\) that are needed for the square case.
+
+\subsection{Squares in a finite field}
+
+An element \(a\in \F_q\) is called a square if there is some \(y\in \F_q\) such that
+\[
+y^2=a.
+\]
+The element \(0\) is a square, since \(0=0^2\). Usually, however, when counting nonzero square residues, we separate \(0\) from the nonzero squares.
+
+The nonzero elements of \(\F_q\) form a multiplicative group, written \(\F_q^\times\). This group has \(q-1\) elements.
+
+\begin{lemma}[Half of the nonzero elements are squares]
+Exactly \((q-1)/2\) elements of \(\F_q^\times\) are squares, and exactly \((q-1)/2\) are nonsquares.
+\end{lemma}
+
+\begin{proof}
+Consider the map
+\[
+\phi:\F_q^\times\to \F_q^\times,
+\qquad
+\phi(y)=y^2.
+\]
+The image of this map is exactly the set of nonzero squares.
+
+Because \(q\) is odd, the equation
+\[
+y^2=1
+\]
+has exactly two solutions:
+\[
+y=1
+\qquad\text{and}\qquad
+ y=-1.
+\]
+Thus every nonzero square has exactly two square roots: if \(y^2=a\), then also \((-y)^2=a\), and these are distinct because \(y\neq -y\) in odd characteristic.
+
+Therefore the \(q-1\) nonzero elements are grouped into pairs \(\{y,-y\}\), and each pair gives one square. Hence the number of nonzero squares is
+\[
+\frac{q-1}{2}.
+\]
+The remaining \((q-1)/2\) nonzero elements are nonsquares.
+\end{proof}
+
+\subsection{The quadratic character}
+
+The quadratic character is a compact way to record whether an element is a square.
+
+\begin{definition}[Quadratic character]
+The quadratic character \(\chi:\F_q\to\{0,1,-1\}\) is defined by
+\[
+\chi(a)=
+\begin{cases}
+1, & a\in \F_q^\times\text{ is a square},\\
+-1, & a\in \F_q^\times\text{ is a nonsquare},\\
+0, & a=0.
+\end{cases}
+\]
+\end{definition}
+
+There are two basic facts that we use repeatedly.
+
+\begin{lemma}[Multiplicativity]
+For all \(a,b\in\F_q\),
+\[
+\chi(ab)=\chi(a)\chi(b).
+\]
+\end{lemma}
+
+\begin{proof}
+If either \(a=0\) or \(b=0\), both sides are \(0\), so suppose \(a,b\neq0\).
+
+The product of two squares is a square. The product of a square and a nonsquare is a nonsquare. Finally, the product of two nonsquares is a square, because the nonzero squares form an index-two subgroup of \(\F_q^\times\). In signs, this says exactly
+\[
+1\cdot1=1,
+\qquad
+1\cdot(-1)=-1,
+\qquad
+(-1)\cdot(-1)=1.
+\]
+So \(\chi(ab)=\chi(a)\chi(b)\).
+\end{proof}
+
+The following subsection is not strictly necessary, but it improves the eventual field-size threshold in the center-zero case.
+
+\subsection{Summing quadratic characters}
+
+\begin{lemma}[The total quadratic character sum is zero]
+\[
+\sum_{x\in\F_q}\chi(x)=0.
+\]
+\end{lemma}
+
+\begin{proof}
+The term \(x=0\) contributes \(0\). Among the nonzero elements, half are squares and half are nonsquares. Therefore
+\[
+\sum_{x\in\F_q}\chi(x)
+=
+0+\frac{q-1}{2}-\frac{q-1}{2}=0.
+\]
+\end{proof}
+
+We can extend this to linear functions of the form \(x-a\) for \(a\in\F_q\). The intuition is simple: a shift does not change the set of values being summed over.
+\begin{lemma}[Quadratic character linear function sum]
+\[
+\boxed{
+\sum_{x\in\F_q}\chi(x-a)=0 \quad \text{for }a \in \F_q.}
+\]
+\label{linear_sum}
+\end{lemma}
+
+\begin{proof}
+For any fixed \(a\in\F_q\), let
+\[
+y=x-a.
+\]
+As \(x\) runs through all of \(\F_q\), so does \(y\). Therefore
+\[
+\sum_{x\in\F_q}\chi(x-a)
+=
+\sum_{y\in\F_q}\chi(y)
+=0.
+\]
+\end{proof}
+
+\begin{lemma}[Quadratic character two-root function sum]
+If \(a,b\in\F_q\) and \(a\neq b\), then
+\[
+\boxed{
+\sum_{x\in\F_q}\chi((x-a)(x-b))=-1.
+}
+\]
+\label{quadratic_sum}
+\end{lemma}
+
+We introduce two proofs of this: one elementary and one that follows from another result in \cite{LidlNiederreiterFiniteFields}.
+
+\begin{proof}[Proof 1]
+First reduce to a standard form. Since \(a\neq b\), the change of variables
+\[
+y=\frac{x-a}{b-a}
+\]
+is a bijection \(\F_q\to\F_q\). Then
+\[
+x-a=(b-a)y
+\]
+and
+\[
+x-b=(b-a)(y-1).
+\]
+Thus
+\[
+(x-a)(x-b)=(b-a)^2y(y-1).
+\]
+Since \((b-a)^2\) is a nonzero square, \(\chi((b-a)^2)=1\). Hence
+\[
+\chi((x-a)(x-b))=\chi(y(y-1)).
+\]
+So it is enough to prove
+\[
+\sum_{y\in\F_q}\chi(y(y-1))=-1.
+\]
+
+Now complete the square:
+\[
+y(y-1)=\frac{(2y-1)^2-1}{4}.
+\]
+Since \(4=2^2\) is a square, multiplying by \(1/4\) does not change the quadratic character. Let
+\[
+t=2y-1.
+\]
+Because \(q\) is odd, \(2\neq0\), so this is another bijection \(\F_q\to\F_q\). Therefore
+\[
+\sum_y \chi(y(y-1))
+=
+\sum_t \chi(t^2-1).
+\]
+
+Let
+\[
+S=\sum_{t\in\F_q}\chi(t^2-1).
+\]
+We will compute \(S\) by counting the number of solutions \((t,s)\in\F_q^2\) to
+\[
+s^2=t^2-1.
+\]
+For each fixed \(t\), the number of \(s\) satisfying this equation is
+\[
+1+\chi(t^2-1).
+\]
+Indeed:
+\begin{itemize}
+    \item if \(t^2-1\) is a nonzero square, there are two choices for \(s\), and \(1+\chi(t^2-1)=2\);
+    \item if \(t^2-1\) is a nonsquare, there are zero choices, and \(1+\chi(t^2-1)=0\);
+    \item if \(t^2-1=0\), there is exactly one choice, namely \(s=0\), and \(1+\chi(0)=1\).
+\end{itemize}
+Therefore the total number of solutions is
+\[
+N=\sum_t\bigl(1+\chi(t^2-1)\bigr)=q+S.
+\]
+
+But the equation
+\[
+s^2=t^2-1
+\]
+is equivalent to
+\[
+t^2-s^2=1,
+\]
+so
+\[
+(t-s)(t+s)=1.
+\]
+Set
+\[
+A=t-s,
+\qquad
+B=t+s.
+\]
+Since the characteristic is odd, the change of variables is reversible:
+\[
+t=\frac{A+B}{2},
+\qquad
+s=\frac{B-A}{2}.
+\]
+Thus solutions \((t,s)\) correspond exactly to pairs \((A,B)\) satisfying
+\[
+AB=1.
+\]
+There are exactly \(q-1\) such pairs: choose any nonzero \(A\), and then \(B=A^{-1}\).
+
+So
+\[
+N=q-1.
+\]
+But we also had
+\[
+N=q+S.
+\]
+Therefore
+\[
+q+S=q-1,
+\]
+and hence
+\[
+S=-1.
+\]
+This proves the lemma.
+\end{proof}
+
+\begin{proof}[Proof 2]
+\cite[Theorem 5.48]{LidlNiederreiterFiniteFields} says that if $f(x) = a_2x^2+a_1x+a_0 \in \F_q[x]$ with $q$ odd and $a_2 \neq 0$, then for $d=a_1^2-4a_0a_2$ and $\chi$ being the quadratic character of $\F_q$:
+
+$$\sum_{c \in \F_q} \chi(f(c)) =
+\begin{cases}
+-\chi(a_2) & d\neq 0\\
+(q-1)\chi(a_2) & d=0.
+\end{cases}
+$$
+Let $f(x) = (x-a)(x-b) = x^2+(-a-b)x+ab$ for $a \neq b$. Then
+\begin{align*}
+    d&=(-a-b)^2-4(1)(ab) = (a+b)^2-4ab\\
+    &=(a^2+2ab+b^2) - 4ab = a^2-2ab+b^2=(a-b)^2.
+\end{align*}
+Since $a \neq b$, this implies $d \neq 0$. Since \(\chi(1)=1\), this means that
+\[
+\sum_{x \in \F_q} \chi((x-a)(x-b)) = -\chi(1) = -1.
+\]
+
+\end{proof}
+
+% \subsection{The square-indicator trick}
+
+% For \(a\neq0\), the expression
+% \[
+% \frac{1+\chi(a)}{2}
+% \]
+% is exactly the indicator function for \(a\) being a square:
+% \[
+% \frac{1+\chi(a)}{2}
+% =
+% \begin{cases}
+% 1, & a\text{ is a nonzero square},\\
+% 0, & a\text{ is a nonsquare}.
+% \end{cases}
+% \]
+
+% At \(a=0\), however,
+% \[
+% \frac{1+\chi(0)}{2}=\frac12.
+% \]
+% So this expression is not quite the indicator of being a square if zeros are involved. In our application, we first use it anyway because it expands beautifully, and then we correct for the few values of \(x\) where one of \(x-1,x,x+1\) equals zero.
+
+% \section{Summary of the calculation}
+
+% The core facts are:
+
+% \begin{enumerate}
+% \item The quadratic character satisfies
+% \[
+% \sum_x\chi(x-a)=0.
+% \]
+% This is because a shift does not change the set of field elements.
+
+% \item If \(a\neq b\), then
+% \[
+% \sum_x\chi((x-a)(x-b))=-1.
+% \]
+% This can be proved by reducing to \(\sum_t\chi(t^2-1)\) and counting the hyperbola \((t-s)(t+s)=1\).
+
+% \item The square-indicator expression
+% \[
+% \frac{1+
+% \chi(a)}{2}
+% \]
+% works perfectly away from \(a=0\), but contributes \(1/2\) at \(a=0\). So zero cases must be corrected separately.
+
+% \item Expanding
+% \[
+% \frac{(1+\chi(x-1))(1+\chi(x))(1+\chi(x+1))}{8}
+% \]
+% gives a constant term \(q/8\), linear terms equal to \(0\), quadratic terms equal to \(-3/8\), and one cubic error term controlled by Weil.
+% \end{enumerate}
+
+% The final estimate is
+% \[
+% \#\{x : x-1,x,x+1\text{ are nonzero squares}\}
+% \ge
+% \frac{q-2\sqrt q-15}{8}
+% \]
+% when \(q\equiv1\pmod4\).
+
+
+
+\section{A center-zero non-Parker criterion for \(q\equiv1\pmod4\)}
+\label{sec:center-zero-square}
+
+Let \(q\equiv1\pmod4\). In this case, \(-1\) is a square. Consider
+\[
+M_0(x)=
+\begin{array}{|c|c|c|}
+\hline
+x & -x-1 & 1\\
+\hline
+1-x & 0 & x-1\\
+\hline
+-1 & x+1 & -x \\
+\hline
+\end{array}.
+\]
+If \(x-1\), \(x\), and \(x+1\) are all squares, then every entry of \(M_0(x)\)
+is a square, because multiplying by \(-1\) preserves being a square. $(\chi(-x)=\chi(-1)\chi(x) = \chi(x).)$
+
+So we need three consecutive quadratic residues:
+\[
+x-1,
+\qquad x,
+\qquad x+1.
+\]
+
+Consider the following indicator function
+\[
+I(x)=\frac{(1+\chi(x))(1+\chi(x-1))(1+\chi(x+1))}{8} = \p{\frac{1+\chi(x-1)}{2}}\p{\frac{1+\chi(x)}{2}}\p{\frac{1+\chi(x+1)}{2}}.
+\]
+Note that this is 1 if all $\chi(x), \chi(x-1), \chi(x+1)$ are 1, and is 0 if any of the three are -1.
+
+This implies that the number of \(x\) for which \(x-1,x,x+1\) are all squares is controlled by
+\[
+\sum_{x\in\F_q}
+\frac{(1+\chi(x-1))(1+\chi(x))(1+\chi(x+1))}{8}.
+\]
+There are special cases when \(x=-1,0,1\), since \(\chi(0)=0\) does not necessarily make \(I(x)\) equal to \(0\) or \(1\). We handle these values separately.
+
+Consider
+\[
+S=
+\sum_{x\in\F_q}
+I(x)
+=
+\sum_{x\in\F_q}
+\frac{(1+\chi(x-1))(1+\chi(x))(1+\chi(x+1))}{8}.
+\]
+
+Expanding the product gives
+\[
+S
+=
+\frac18
+\sum_x
+\Bigl[
+1
++\chi(x-1)
++\chi(x)
++\chi(x+1)
+\]
+\[
++\chi((x-1)x)
++\chi((x-1)(x+1))
++\chi(x(x+1))
+\]
+\[
++\chi((x-1)x(x+1))
+\Bigr].
+\]
+
+The constant term contributes
+\[
+\sum_{x \in \F_q} 1=q.
+\]
+
+By Lemma \ref{linear_sum}, the linear terms contribute
+\[
+\sum_{x \in \F_q}\chi(x-1)+\sum_{x \in \F_q}\chi(x)+\sum_{x \in \F_q}\chi(x+1)=0.
+\]
+
+By Lemma \ref{quadratic_sum}, the quadratic terms contribute $-1$ each, so
+\[
+\sum_{x \in \F_q}\chi((x-1)x)+\sum_{x \in \F_q}\chi((x-1)(x+1))+\sum_{x \in \F_q}\chi(x(x+1))=-3.
+\]
+What is left is to find the contribution of the cubic term
+$$\sum_x\chi((x-1)x(x+1)).$$ By Theorem \ref{weil}, since
+\[
+(x-1)x(x+1)
+\]
+is squarefree of degree \(3\), we have
+\[
+|T|\le 2\sqrt q.
+\]
+
+Putting it all together, we see that $$S = \frac{1}{8} \p{q-3+T} \implies \frac{q-3-2\sqrt{q}}{8} \leq S \leq \frac{q-3+2\sqrt{q}}{8}.$$
+
+Although the sum \(S\) gives an approximate count of elements \(x\in\F_q\) such that \(x-1,x,x+1\) are all squares, it is not a perfect count. There are two ways this count is imperfect.
+\begin{itemize}
+    \item If either $x, x-1, x+1$ is 0, then $$I(x) = \p{\frac{1+\chi(x-1)}{2}}\p{\frac{1+\chi(x)}{2}}\p{\frac{1+\chi(x+1)}{2}}$$ may not give \(1\) or \(0\). This happens when \(x=0\), \(x=1\), or \(x=-1\).
+    \item If any of the 9 entries in $M_0(x)$ are duplicates, then the magic square construction is jeopardized since they may represent the same element in the field. Brute forcing the equations together, this can happen if $$x \in \{-2, -1, -1/2, 0, 1/2, 1, 2\}$$
+    where \(1/2\) denotes the inverse of \(2\) in \(\F_q\).
+\end{itemize}
+
+In any case, there are at most seven bad values for $x$ such that if $I(x)=1$, then $M_0(x)$ gives an invalid construction with squares. Therefore, we want $S>7$. Putting this together, we see that
+$$S \geq \frac{q-3-2\sqrt{q}}{8} > 7 \implies q \geq 77.$$
+
+Therefore, for any finite field \(\F_q\) of odd order with \(q\equiv1\pmod4\) and \(q\geq77\), the family \(M_0(x)\) contains a magic square of distinct squares.
+
+The remaining fields with \(q\equiv1\pmod4\) and \(q<77\) are handled by the
+finite-field computations described in Section \ref{sec:finite-field-searches}.
+
+\begin{remark}
+One can lower the guaranteed non-Parker threshold by considering the quadratic sums when $x=0, -1, 1$ and removing those values from $S$ explicitly. Note that $I(0)=1/2$, and
+$$I(1) = \p{\frac{1+\chi(0)}{2}}\p{\frac{1+\chi(1)}{2}}\p{\frac{1+\chi(2)}{2}} = \frac{1+\chi(2)}{4},$$ and similarly $I(-1) = \frac{1+\chi(-2)}{4}=\frac{1+\chi(2)}{4}$ since $\chi(-2)=\chi(-1)\chi(2) = 1\cdot \chi(2)$. This then leaves four bad values for \(x\), and since \(-1\leq\chi(2)\leq1\), one can check that this improves the bound to \(q\geq63\).
+\end{remark}
+
+\section{A center-one non-Parker criterion for \(q\equiv3\pmod4\)}
+\label{sec:center-one-square}
+
+Now assume \(q\equiv3\pmod4\).  The center-zero method is not useful in this
+case, because \(-1\) is not a square.  We therefore use a center-one
+construction.
+
+Recall that
+\[
+M(1,u,v)=
+\begin{array}{|c|c|c|}
+\hline
+1+u & 1-u-v & 1+v\\
+\hline
+1-u+v & 1 & 1+u-v\\
+\hline
+1-v & 1+u+v & 1-u \\
+\hline
+\end{array}.
+\]
+We need the eight non-center entries
+\[
+1\pm u,
+\qquad 1\pm v,
+\qquad 1\pm u\pm v
+\]
+to be squares.
+
+One can try to reduce the number of parameters by restricting to a one-parameter line. For example, the specialization \(v=3u\) gives the non-center entries
+\[
+1\pm u,\qquad 1\pm 2u,\qquad 1\pm 3u,\qquad 1\pm 4u.
+\]
+This works in many characteristics, but it can fail in small characteristics such as \(3\) and \(7\), where some of these coefficients vanish or collide. To avoid this issue uniformly, we use a flexible line.
+Set
+\[
+u=t,
+\qquad
+v=bt.
+\]
+Then
+\[
+M(1,t,bt)=
+\begin{array}{|c|c|c|}
+\hline
+1+t & 1-(1+b)t & 1+bt\\
+\hline
+1+(b-1)t & 1 & 1+(1-b)t\\
+\hline
+1-bt & 1+(1+b)t & 1-t \\
+\hline
+\end{array}.
+\]
+The eight non-center entries have the form
+\[
+1+\lambda t,
+\]
+where
+\[
+\Lambda_b=\{\pm1,\pm b,\pm(1+b),\pm(1-b)\}.
+\]
+
+We first choose \(b\) so that the elements of \(\Lambda_b\) are nonzero and
+pairwise distinct.  A direct comparison of the eight elements shows that a zero
+or collision can occur only when
+\[
+b\in\left\{0,\pm1,\pm2,\pm\frac12\right\}.
+\]
+Indeed, these are exactly the possible solutions of the linear equations
+obtained by setting one element of
+\[
+\{1,-1,b,-b,1+b,-1-b,1-b,b-1\}
+\]
+equal to zero or equal to another element.  Hence, if \(q>7\), we may choose
+\[
+b\notin\left\{0,\pm1,\pm2,\pm\frac12\right\},
+\]
+and then \(\Lambda_b\) consists of eight distinct nonzero elements.  The cases
+\(q=3\) and \(q=7\) are automatically Parker, since the field has fewer than
+nine elements and hence cannot contain nine distinct entries.
+
+Fix such a value of \(b\).  Define
+\[
+I_b(t)=
+\prod_{\lambda\in\Lambda_b}
+\frac{1+\chi(1+\lambda t)}{2},
+\qquad
+S_b=\sum_{t\in\F_q} I_b(t).
+\]
+For a value of \(t\) such that none of the numbers \(1+\lambda t\) is zero, the
+summand is exactly \(1\) if all eight non-center entries are squares, and \(0\)
+otherwise.
+
+Expanding the product gives
+\[
+S_b=\frac{1}{2^8}
+\sum_{\alpha\subseteq \Lambda_b}
+\sum_{t\in\F_q}
+\chi\!\left(\prod_{\lambda\in\alpha}(1+\lambda t)\right),
+\]
+where the empty product is interpreted as \(1\).  We group the character sums by
+the size of \(\alpha\).
+
+The empty subset contributes \(q\).  If \(|\alpha|=1\), then the corresponding
+linear character sum is zero.  If \(\alpha=\{\lambda,\mu\}\) has size \(2\), then
+\[
+(1+\lambda t)(1+\mu t)
+=
+\lambda\mu
+\left(t+\frac1\lambda\right)
+\left(t+\frac1\mu\right).
+\]
+Since \(\lambda\neq\mu\), Lemma \ref{quadratic_sum} gives
+\[
+\sum_{t\in\F_q}\chi\bigl((1+\lambda t)(1+\mu t)\bigr)
+=
+-\chi(\lambda\mu).
+\]
+In particular, each degree-two term is at least \(-1\), so the total
+degree-two contribution is at least
+\[
+-\binom82=-28.
+\]
+
+For all terms with \(|\alpha|=r\geq3\), write
+\[
+f_\alpha(t)=\prod_{\lambda\in\alpha}(1+\lambda t).
+\]
+Because the elements of \(\Lambda_b\) are distinct and nonzero, \(f_\alpha\) is
+square-free with \(r\) distinct roots.  By Weil's bound,
+\[
+\left|
+\sum_{t\in\F_q}
+\chi(f_\alpha(t))
+\right|
+\leq (r-1)\sqrt q.
+\]
+Therefore
+\[
+\left|
+\sum_{|\alpha|\geq3}
+\sum_{t\in\F_q}
+\chi(f_\alpha(t))
+\right|
+\leq
+\sum_{r=3}^8 \binom8r(r-1)\sqrt q
+=
+741\sqrt q.
+\]
+
+Putting everything together,
+\[
+S_b
+\geq
+\frac{q-28-741\sqrt q}{256}.
+\]
+
+We now remove values of \(t\) that do not give a valid distinct-entry
+construction.  There are at most nine such values:
+\[
+t=0,
+\]
+which makes all eight non-center entries equal to \(1\), and the at most eight
+values
+\[
+t=-\frac1\lambda,
+\qquad \lambda\in\Lambda_b,
+\]
+where one of the non-center entries is zero.  Each discarded value contributes at
+most \(1\) to \(S_b\).  Therefore, if \(S_b>9\), then some non-discarded value of
+\(t\) remains.
+
+For this remaining value of \(t\), all eight non-center entries are nonzero
+squares.  Since \(t\neq0\) and the coefficients \(\lambda\in\Lambda_b\) are
+distinct, the eight non-center entries are pairwise distinct.  They are also
+distinct from the center entry \(1\).  Hence \(M(1,t,bt)\) is a magic square of
+nine distinct squares.
+
+It is enough to require
+\[
+\frac{q-28-741\sqrt q}{256}>9,
+\]
+or equivalently
+\[
+q-741\sqrt q>2332.
+\]
+This holds for every
+\[
+q\geq553736.
+\]
+
+Therefore every finite field \(\F_q\) with \(q\equiv3\pmod4\) and
+\[
+q\geq553736
+\]
+is non-Parker.
+
+The remaining fields with \(q\equiv3\pmod4\) and \(q<553736\) are handled by the
+finite-field computations described in Section \ref{sec:finite-field-searches}.
+
+\section{Pseudocode for the finite-field searches}
+\label{sec:finite-field-searches}
+
+We briefly describe the brute-force computations used for the remaining finite
+fields below the theoretical bounds. The exhaustive search uses the universal
+parametrization
+\[
+M(E,U,V)=
+\begin{array}{|c|c|c|}
+\hline
+E+U & E-U-V & E+V\\
+\hline
+E-U+V & E & E+U-V\\
+\hline
+E-V & E+U+V & E-U\\
+\hline
+\end{array}.
+\]
+Thus every \(3\times 3\) magic square over the field occurs for some choice of
+\(E,U,V\). Therefore, checking all triples \((E,U,V)\in\F_q^3\) is a
+complete finite search.
+
+For the extension to \(n\)-th powers, we use the following elementary membership
+test. Let
+\[
+H=(\F_q^\times)^n
+\]
+be the subgroup of nonzero \(n\)-th powers. If
+\[
+d=\gcd(n,q-1),
+\]
+then \(H\) has index \(d\) in \(\F_q^\times\). Hence a nonzero element
+\(a\in\F_q^\times\) is an \(n\)-th power if and only if
+\[
+a^{(q-1)/d}=1.
+\]
+We also count \(0\) as an \(n\)-th power, since \(0=0^n\).
+
+\begin{algorithm}[H]
+\caption{Testing whether an element is an \(n\)-th power}
+\label{alg:nth-power-test}
+\begin{algorithmic}[1]
+\Require A finite field \(\F_q\), an integer \(n\geq 1\), and \(a\in\F_q\)
+\State \(d\gets \gcd(n,q-1)\)
+\If{\(a=0\)}
+    \State \Return \textsc{true}
+\EndIf
+\If{\(a^{(q-1)/d}=1\)}
+    \State \Return \textsc{true}
+\Else
+    \State \Return \textsc{false}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+The complete search is then as follows. For the square problem, this algorithm is run with \(n=2\).  For the arbitrary
+power extension, the same algorithm is run with the desired exponent \(n\).
+
+\begin{algorithm}[H]
+\caption{Exhaustive search for a magic square of \(n\)-th powers over \(\mathbb F_q\)}
+\label{alg:exhaustive-search}
+\begin{algorithmic}[1]
+\Require A finite field \(\mathbb F_q\) and an integer \(n\geq 1\)
+\ForAll{\(E\in\mathbb F_q\)}
+    \ForAll{\(U\in\mathbb F_q\)}
+        \ForAll{\(V\in\mathbb F_q\)}
+            \State Form the list
+            \[
+            L\gets
+            \bigl[
+            E+U,\ E-U-V,\ E+V,\ E-U+V,\ E,\ E+U-V,\ E-V,\ E+U+V,\ E-U
+            \bigr].
+            \]
+            \If{the nine elements of \(L\) are pairwise distinct}
+                \State \(\textsc{AllPowers}\gets \textsc{true}\)
+                \ForAll{\(y\in L\)}
+                    \If{\(y\) is not an \(n\)-th power by Algorithm \ref{alg:nth-power-test}}
+                        \State \(\textsc{AllPowers}\gets \textsc{false}\)
+                    \EndIf
+                \EndFor
+                \If{\(\textsc{AllPowers}=\textsc{true}\)}
+                    \State \Return \(\textsc{Non-Parker}\), together with the witness \(M(E,U,V)\)
+                \EndIf
+            \EndIf
+        \EndFor
+    \EndFor
+\EndFor
+\State \Return \(\textsc{Parker}\)
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm \ref{alg:exhaustive-search} is the computation used to certify the
+small Parker fields. If it returns \(\textsc{Non-Parker}\), it gives an
+explicit witness. If it returns \(\textsc{Parker}\), then no distinct-entry magic
+square of \(n\)-th powers exists over that field, because every possible magic
+square has been checked through the universal form.
+
+The witnesses in the tables were often found using the same one-parameter
+families that appear in the theoretical proof, such as the center-zero family
+\(M_0(x)\) in the \(q\equiv1\pmod4\) case and the center-one line
+\(M(1,u,3u)\) in the \(q\equiv3\pmod4\) case.  These restricted searches are
+useful for finding examples quickly, but they are not needed to certify that a
+field is Parker.  In general, a negative result must come from a search that covers all normalized
+cases relevant to that field. The universal-form search does this directly. In
+the \(q\equiv3\pmod4\) square case, the center-zero case is impossible and every
+nonzero-center square normalizes to center one, so the complete center-one search
+is sufficient.
+
+Finally, to classify all finite fields below a theoretical bound \(B\), we run
+the exhaustive search over every prime power \(q<B\) in the desired congruence
+class.
+
+\begin{algorithm}[H]
+\caption{Finite-field classification below a bound}
+\label{alg:field-classification}
+\begin{algorithmic}[1]
+\Require An integer \(n\geq 1\), a bound \(B\), and a set of allowed prime powers \(\mathcal Q\)
+\ForAll{\(q\in\mathcal Q\) with \(q<B\)}
+    \State Construct a model for \(\F_q\)
+    \State Run Algorithm \ref{alg:exhaustive-search} on \((\F_q,n)\)
+    \If{Algorithm \ref{alg:exhaustive-search} returns a witness}
+        \State Record \(\F_q\) as non-Parker and store the witness
+    \Else
+        \State Record \(\F_q\) as Parker
+    \EndIf
+\EndFor
+\State \Return the table of Parker and non-Parker fields below \(B\)
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Computational implementation and reproducibility.}
+The computations used for the finite-field tables and Parker field lists are implemented in pure Python and are available in the repository \cite{magicSquaresFieldsRepo}.  The repository contains a shared finite-field arithmetic file, separate scripts for the \(q\equiv1\pmod4\) and \(q\equiv3\pmod4\) square cases, and a script for the cube case.  The corresponding output files record the Parker fields, non-Parker witnesses, and the fields for which no witness exists.
+
+The \(q\equiv3\pmod4\) computation is split into two stages.  A fast line search first finds witnesses using center-one families, prioritizing \(M(1,u,3u)\) before looking at the broader case \(M(1,u,bu)\).  The remaining line-search failures are then checked by the complete center-one search over all \((u,v)\in\F_q^2\).  This is enough in the \(q\equiv3\pmod4\) case for the following reason: Any magic square of squares with nonzero center can be scaled by the inverse of its center to obtain a center-one magic square of squares. On the other hand, a distinct center-zero square of squares cannot exist when \(-1\) is not a square: the opposite nonzero entries would force both \(z\) and \(-z\) to be squares, and hence would force \(-1\) to be a square. Thus the complete center-one failure list certifies the Parker fields in this congruence class.
+
+\section{Finite-field classification}
+
+In the \(q\equiv1\pmod4\) case, Section \ref{sec:center-zero-square} proves that every field of order \(q\geq77\) is guaranteed to be non-Parker.
+
+The remaining cases can be checked with the normalized finite search described above.  The output is recorded in the repository file \texttt{q1\_results.txt} \cite{magicSquaresFieldsRepo}, with the results shown here:
+
+\[
+\begin{array}{c|c|c|c}
+q & \F_q & \text{Status} & \text{Reason / witness} \\
+\hline
+5  & \F_5   & \text{Parker} & \text{finite check} \\
+9  & \F_9   & \text{Parker} & \text{finite check} \\
+13 & \F_{13} & \text{Parker} & \text{finite check} \\
+17 & \F_{17} & \text{Parker} & \text{finite check} \\
+25 & \F_{25} & \text{Parker} & \text{finite check} \\
+\hline
+29 & \F_{29} & \text{non-Parker} & x=5 \\
+37 & \F_{37} & \text{non-Parker} & x=10 \\
+41 & \F_{41} & \text{non-Parker} & x=9 \\
+49 & \F_{49} & \text{non-Parker} & x=\alpha,\ \alpha^2+1=0 \\
+53 & \F_{53} & \text{non-Parker} & x=10 \\
+61 & \F_{61} & \text{non-Parker} & x=4 \\
+73 & \F_{73} & \text{non-Parker} & x=3
+\end{array}
+\]
+
+Hence, the only finite fields that are Parker of order \(q\equiv1\pmod4\) are
+\[
+\F_5,
+\qquad \F_9,
+\qquad \F_{13},
+\qquad \F_{17},
+\qquad \F_{25}.
+\]
+
+In the \(q\equiv3\pmod4\) case, Section \ref{sec:center-one-square} proves that every field of order \(q\geq553736\) is guaranteed to be non-Parker.
+
+The remaining cases are checked by running over every prime power \(q<553736\) with \(q\equiv3\pmod4\), not merely over prime fields.  The repository records the fast line-search witnesses in \texttt{q3\_b3\_then\_autoline\_results.txt} and the complete center-one checks for the remaining failures in \texttt{q3\_full\_uv\_results.txt} \cite{magicSquaresFieldsRepo}.  The only finite fields that are Parker of order \(q\equiv3\pmod4\) are
+\[
+\F_3,
+\qquad \F_7,
+\qquad \F_{11},
+\qquad \F_{19},
+\qquad \F_{23},
+\qquad \F_{27},
+\qquad \F_{31},
+\qquad \F_{43},
+\qquad \F_{47},
+\qquad\F_{67},
+\qquad\F_{243}.
+\]
+
+Combining the two cases gives us a complete classification of Parker finite fields.
+
+\begin{theorem}
+    Among finite fields of odd order, the complete list of Parker finite fields is
+    \[
+    \boxed{
+    \F_3,\F_5,\F_7,\F_9,\F_{11},\F_{13},\F_{17},\F_{19},\F_{23},\F_{25},
+    \F_{27},\F_{31},\F_{43},\F_{47},\F_{67},\F_{243}.}
+    \]
+\end{theorem}
+
+Thus the finite-field classification gives useful local information, but it
+cannot by itself rule out the existence of an integer magic square of squares.
+Since only finitely many odd finite fields are Parker, the odd-characteristic
+finite-field obstruction is finite rather than universal. Characteristic two is
+a separate permanent obstruction, as discussed in Section \ref{sec:char_two}.
+
+\section{From squares to arbitrary powers}
+
+The previous sections focus on squares.  However, most of the argument does not
+really depend on the exponent being exactly 2.  What matters is that the nonzero
+squares form a multiplicative subgroup of \(\F_q^\times\), and that this subgroup
+can be detected by multiplicative characters.  The same idea works for any fixed
+power.
+
+Let
+\[
+H_n=(\F_q^\times)^n=\{a^n:a\in \F_q^\times\}
+\]
+be the subgroup of nonzero \(n\)-th powers.  Since \(\F_q^\times\) is cyclic of
+order \(q-1\), the index of \(H_n\) is
+\[
+d=\gcd(n,q-1).
+\]
+Thus
+\[
+|H_n|=\frac{q-1}{d}.
+\]
+In particular, for fixed \(n\), the index \(d\) is always bounded by \(n\).  This
+is the key reason that only finitely many odd finite fields can fail to contain a
+magic square of distinct \(n\)-th powers.
+
+\begin{definition}
+Fix \(n\geq 1\).  We say that \(\F_q\) is \emph{\(n\)-Parker} if there is no
+\(3\times 3\) magic square over \(\F_q\) whose nine entries are distinct
+\(n\)-th powers.  As usual, \(0\) is counted as an \(n\)-th power because
+\(0=0^n\).
+\end{definition}
+
+When \(n=2\), this is exactly the Parker condition for magic squares of squares.
+For general \(n\), the same two constructions from Sections 6 and 7 still drive
+the proof: the center-zero construction when \(-1\) is an \(n\)-th power, and the
+center-one construction when it is not.
+
+\section{Characters for \(n\)-th powers}
+
+Let \(d=\gcd(n,q-1)\).  If \(d=1\), then every nonzero element of \(\F_q\) is an
+\(n\)-th power, so the power condition is automatic.  The interesting case is
+\(d>1\).
+
+Choose a multiplicative character \(\psi\) of order \(d\) on \(\F_q^\times\).  Then
+\(H_n\) is exactly the kernel of \(\psi\):
+\[
+H_n=\{x\in \F_q^\times:\psi(x)=1\}.
+\]
+For nonzero \(x\), the indicator of \(H_n\) is
+\[
+1_{H_n}(x)=\frac{1+\psi(x)+\psi^2(x)+\cdots+\psi^{d-1}(x)}{d}.
+\]
+As in the square case, zero requires a small correction.  We use the following
+convention:
+\[
+\psi^0(x)=1\quad\text{for all }x\in\F_q,
+\]
+while for \(j\neq 0\), we extend \(\psi^j\) to \(0\) by setting
+\[
+\psi^j(0)=0.
+\]
+Now define
+\[
+J(x)=\frac{1+\psi(x)+\psi^2(x)+\cdots+\psi^{d-1}(x)}{d}.
+\]
+Then
+\[
+J(x)=
+\begin{cases}
+1, & x\in H_n,\\
+0, & x\in \F_q^\times\setminus H_n,\\
+1/d, & x=0.
+\end{cases}
+\]
+So \(J\) is exactly the \(n\)-th power indicator away from zero, and it has a
+controlled fractional value at zero.  This is the direct analogue of the
+quadratic expression
+\[
+\frac{1+\chi(x)}{2}
+\]
+used earlier in the paper.
+
+We will repeatedly use the following form of Weil's bound.  If
+\[
+f(x)=\prod_{i=1}^r (x-a_i)^{e_i}
+\]
+has \(r\) distinct roots and at least one exponent \(e_i\) not divisible by
+\(d\), then \(f\) is not a \(d\)-th power over \(\overline{\F_q}\).  Therefore
+\[
+\left|\sum_{x\in\F_q}\psi(f(x))\right|\leq (r-1)\sqrt q.
+\]
+This is the same theorem as Theorem \ref{weil}, but now applied to a character
+of order \(d\), rather than only to the quadratic character.
+
+\section{The center-zero construction for \(n\)-th powers}
+
+The center-zero square from Section 6 was
+\[
+M_0(x)=
+\begin{array}{|c|c|c|}
+\hline
+x & -x-1 & 1\\
+\hline
+1-x & 0 & x-1\\
+\hline
+-1 & x+1 & -x \\
+\hline
+\end{array}.
+\]
+The nonzero entries are built from
+\[
+1,\quad -1,\quad x,\quad -x,\quad x-1,\quad 1-x,\quad x+1,\quad -x-1.
+\]
+Thus, if \(-1\in H_n\), it is enough to find \(x\) such that
+\[
+x-1,\qquad x,
+\qquad x+1
+\]
+are all nonzero \(n\)-th powers.
+
+The condition \(-1\in H_n\) has a simple group-theoretic form.
+
+\begin{lemma}
+Let \(q\) be odd and let \(d=\gcd(n,q-1)\).  Then
+\[
+-1\in (\F_q^\times)^n
+\quad\Longleftrightarrow\quad
+ d\mid \frac{q-1}{2}.
+\]
+In particular, if \(n\) is odd, then \(-1\) is always an \(n\)-th power in
+\(\F_q\).
+\end{lemma}
+
+\begin{proof}
+Let \(g\) be a generator of \(\F_q^\times\).  Then
+\[
+H_n=(\F_q^\times)^n=\langle g^d\rangle.
+\]
+Also
+\[
+-1=g^{(q-1)/2}.
+\]
+Therefore \(-1\in H_n\) exactly when \((q-1)/2\) is divisible by \(d\).
+
+If \(n\) is odd, then \(d\) is odd.  Since \(d\mid q-1\), it follows that
+\(d\mid (q-1)/2\).  Hence \(-1\in H_n\).
+\end{proof}
+
+Now count values of \(x\) for which \(x-1,x,x+1\) all lie in \(H_n\).  Define
+\[
+S_0=\sum_{x\in\F_q}J(x-1)J(x)J(x+1).
+\]
+Expanding the three factors gives
+\[
+S_0
+=
+\frac{1}{d^3}
+\sum_{(a,b,c)\in\{0,1,\dots,d-1\}^3}
+\sum_{x\in\F_q}
+\psi^a(x-1)\psi^b(x)\psi^c(x+1).
+\]
+The term \((a,b,c)=(0,0,0)\) contributes \(q\).  All other terms are controlled
+by Weil's bound.  If exactly one of \(a,b,c\) is nonzero, then the corresponding
+linear character sum is zero.  If exactly two are nonzero, Weil gives a bound
+\(\sqrt q\).  If all three are nonzero, Weil gives a bound \(2\sqrt q\).
+Therefore
+\[
+S_0\geq
+\frac{q-C_0(d)\sqrt q}{d^3},
+\]
+where
+\[
+C_0(d)=3(d-1)^2+2(d-1)^3=(d-1)^2(2d+1).
+\]
+
+The values \(x=-1,0,1\) are the only places where one of
+\(x-1,x,x+1\) is zero.  If \(-1\in H_n\), then their combined contribution to
+\(S_0\) is at most
+\[
+\frac{3}{d}.
+\]
+The center-zero square can also have duplicate entries.  As in Section 6, a
+direct comparison of the nine entries shows that this can happen only when
+\[
+x\in\left\{-2,-1,-\frac12,0,\frac12,1,2\right\}.
+\]
+The values \(-1,0,1\) have already been accounted for, so there are at most four
+additional bad values.
+
+\begin{theorem}[Center-zero \(n\)-th power construction]
+\label{center-zero-nth-power}
+Let \(q\) be odd, let \(d=\gcd(n,q-1)\), and assume
+\[
+-1\in (\F_q^\times)^n.
+\]
+If
+\[
+q-C_0(d)\sqrt q>4d^3+3d^2,
+\]
+where
+\[
+C_0(d)=(d-1)^2(2d+1),
+\]
+then \(\F_q\) has a distinct-entry center-zero magic square of \(n\)-th powers.
+\end{theorem}
+
+\begin{proof}
+The lower bound above gives
+\[
+S_0\geq \frac{q-C_0(d)\sqrt q}{d^3}.
+\]
+The three zero values contribute at most \(3/d\).  Hence the number of
+\(x\notin\{-1,0,1\}\) for which \(x-1,x,x+1\in H_n\) is at least
+\[
+S_0-\frac{3}{d}.
+\]
+If
+\[
+S_0-\frac{3}{d}>4,
+\]
+then at least one such \(x\) avoids the four remaining duplicate-entry values
+\(\pm2,\pm1/2\).  For that value of \(x\), all entries of \(M_0(x)\) are
+\(n\)-th powers, and the entries are distinct.
+
+The inequality
+\[
+S_0-\frac{3}{d}>4
+\]
+is guaranteed by
+\[
+\frac{q-C_0(d)\sqrt q}{d^3}>4+\frac{3}{d},
+\]
+which is exactly
+\[
+q-C_0(d)\sqrt q>4d^3+3d^2.
+\]
+\end{proof}
+
+Equivalently, the center-zero construction is guaranteed once
+\[
+\sqrt q>
+\frac{C_0(d)+\sqrt{C_0(d)^2+4(4d^3+3d^2)}}{2}.
+\]
+For fixed \(d\), this is an explicit finite bound.  Since
+\(C_0(d)=\mc{O}(d^3)\), this center-zero method gives a bound of size
+\[
+q=\mc{O}(d^6).
+\]
+In particular, for odd \(n\), since \(-1\) is always an \(n\)-th power, all
+sufficiently large odd finite fields work with a bound of size \(\mc{O}(n^6)\).
+
+\section{Cubes}
+
+Cubes are the cleanest first example beyond squares.  Let \(n=3\).  Then
+\[
+d=\gcd(3,q-1)
+\]
+is either \(1\) or \(3\).
+
+If \(d=1\), then every nonzero element of \(\F_q\) is a cube.  Hence the cube
+condition is automatic.
+
+If \(d=3\), then \(-1\in H_3\), because \(-1=(-1)^3\).  Thus the center-zero
+construction applies.  In this case
+\[
+C_0(3)=(3-1)^2(2\cdot 3+1)=28.
+\]
+The sufficient inequality from Theorem \ref{center-zero-nth-power} becomes
+\[
+q-28\sqrt q>4\cdot 3^3+3\cdot 3^2=135.
+\]
+Equivalently,
+\[
+\sqrt q>14+\sqrt{331}.
+\]
+Since
+\[
+(14+\sqrt{331})^2=527+28\sqrt{331}\approx 1036.4,
+\]
+we obtain the following explicit result.
+
+\begin{corollary}[Explicit cube bound]
+Every odd finite field \(\F_q\) with
+\[
+q\geq 1037
+\]
+contains a distinct-entry center-zero \(3\times 3\) magic square of cubes.
+\end{corollary}
+
+This is the direct cube analogue of the \(q\equiv1\pmod4\) square argument from
+Section 6.  The important difference is that for cubes, the sign obstruction is
+absent: \(-1\) is automatically a cube.
+
+Combining the bound above with a finite computation gives a concrete cube
+classification in odd characteristic.
+
+\begin{theorem}[Odd-characteristic cube Parker fields]
+Among finite fields of odd characteristic, the fields that are \(3\)-Parker are
+\[
+\F_3,
+\F_5,
+\F_7,
+\F_{13},
+\F_{19},
+\F_{25},
+\F_{31},
+\F_{37},
+\F_{43},
+\F_{61},
+\F_{67},
+\F_{79},
+\F_{127},
+\F_{343}.
+\]
+\end{theorem}
+
+\begin{proof}
+The corollary above shows that every odd finite field \(\F_q\) with
+\(q\geq1037\) contains a distinct-entry magic square of cubes.  Therefore only
+odd prime powers \(q<1037\) need to be checked.  Running the normalized finite
+search with \(n=3\), using the membership test from Algorithm
+\ref{alg:nth-power-test}, gives exactly the fields listed above as the fields
+with no distinct-entry magic square of cubes.  The code and output are recorded
+in \texttt{pythagorean\_fields\_n3.py} and \texttt{n3\_results.txt} in
+\cite{magicSquaresFieldsRepo}.
+\end{proof}
+
+\section{The center-one construction for the sign-obstructed case}
+
+The center-zero method depends on \(-1\in H_n\).  If \(-1\notin H_n\), then a
+center-zero distinct magic square cannot be produced by this method, because
+opposite nonzero entries occur in pairs \(z\) and \(-z\).
+
+We therefore return to the center-one construction from Section 7.  Instead of
+using only the line \(v=3u\), we use a slightly more flexible line.  This avoids
+small-characteristic coefficient collisions and makes the argument work uniformly
+for arbitrary \(n\).
+
+Set
+\[
+U=t,
+\qquad
+V=bt.
+\]
+Then
+\[
+M(1,t,bt)=
+\begin{array}{|c|c|c|}
+\hline
+1+t & 1-(1+b)t & 1+bt\\
+\hline
+1+(b-1)t & 1 & 1+(1-b)t\\
+\hline
+1-bt & 1+(1+b)t & 1-t \\
+\hline
+\end{array}.
+\]
+The eight non-center entries have the form
+\[
+1+\lambda t,
+\]
+where
+\[
+\Lambda_b=\{\pm1,\pm b,\pm(1+b),\pm(1-b)\}.
+\]
+We want the eight elements of \(\Lambda_b\) to be nonzero and distinct.
+A direct comparison of the eight elements shows that a zero or collision can
+occur only when
+\[
+b\in\left\{0,\pm1,\pm2,\pm\frac12\right\}.
+\]
+Thus, if \(q>7\), we may choose \(b\in\F_q\) outside this set, and then
+\(\Lambda_b\) consists of eight distinct nonzero elements.  The small fields
+\(q=3,5,7\) have fewer than nine elements, so they cannot contain a magic square
+with nine distinct entries in any case.
+
+Fix such a value of \(b\).  Define
+\[
+S_1=\sum_{t\in\F_q}\prod_{\lambda\in\Lambda_b}J(1+\lambda t).
+\]
+Expanding gives
+\[
+S_1
+=
+\frac{1}{d^8}
+\sum_{(e_\lambda)\in\{0,1,\dots,d-1\}^{\Lambda_b}}
+\sum_{t\in\F_q}
+\psi\!\left(
+\prod_{\lambda\in\Lambda_b}(1+\lambda t)^{e_\lambda}
+\right).
+\]
+Here an exponent vector \((e_\lambda)\) assigns to each
+\(\lambda\in\Lambda_b\) an exponent \(e_\lambda\in\{0,1,\dots,d-1\}\).
+The all-zero exponent vector contributes \(q\).  If exactly one exponent is
+nonzero, the corresponding character sum is linear and contributes \(0\).  If
+exactly \(r\geq 2\) exponents are nonzero, then the polynomial has \(r\) distinct
+roots, and Weil's bound gives at most \((r-1)\sqrt q\).
+
+Therefore
+\[
+S_1\geq
+\frac{q-C_1(d)\sqrt q}{d^8},
+\]
+where
+\[
+C_1(d)=\sum_{r=2}^8 {8\choose r}(d-1)^r(r-1).
+\]
+We now derive the closed form for \(C_1(d)\). Let
+\[
+x=d-1,
+\]
+so that \((d-1)^r=x^r\) and \(d=1+x\). Then
+\[
+C_1(d)
+=
+\sum_{r=2}^{8}\binom{8}{r}(d-1)^r(r-1)
+=
+\sum_{r=2}^{8}\binom{8}{r}x^r(r-1).
+\]
+Split the summand using \(r-1=r-1\):
+\[
+\sum_{r=2}^{8}\binom{8}{r}x^r(r-1)
+=
+\sum_{r=2}^{8}r\binom{8}{r}x^r
+-
+\sum_{r=2}^{8}\binom{8}{r}x^r.
+\]
+For the second sum, the binomial theorem gives
+\[
+\sum_{r=0}^{8}\binom{8}{r}x^r=(1+x)^8,
+\]
+so
+\[
+\sum_{r=2}^{8}\binom{8}{r}x^r
+=
+(1+x)^8-1-8x.
+\]
+For the first sum, use the identity
+\[
+r\binom{8}{r}=8\binom{7}{r-1}
+\]
+to obtain
+\[
+\sum_{r=2}^{8}r\binom{8}{r}x^r
+=
+8x\sum_{r=2}^{8}\binom{7}{r-1}x^{r-1}
+=
+8x\sum_{s=1}^{7}\binom{7}{s}x^s
+=
+8x\bigl[(1+x)^7-1\bigr].
+\]
+Combining the two sums gives
+\begin{align*}
+C_1(d)
+&=8x(1+x)^7-8x-\left[(1+x)^8-1-8x\right] \\
+&=8x(1+x)^7-(1+x)^8+1 \\
+&=(1+x)^7\bigl[8x-(1+x)\bigr]+1 \\
+&=(1+x)^7(7x-1)+1.
+\end{align*}
+Substituting back \(x=d-1\), so that \(1+x=d\) and
+\(7x-1=7(d-1)-1=7d-8\), yields
+\[
+C_1(d)=d^7(7d-8)+1,
+\]
+as claimed.
+
+There are at most nine values of \(t\) that we discard: the value \(t=0\), which
+makes all eight non-center entries equal to \(1\), and the at most eight values
+\[
+t=-\frac{1}{\lambda},
+\qquad \lambda\in\Lambda_b,
+\]
+where one of the non-center entries is zero.  Each discarded value contributes at
+most \(1\) to \(S_1\).  Hence \(S_1>9\) guarantees a value of \(t\) for which all
+nine entries are distinct nonzero \(n\)-th powers.
+
+\begin{theorem}[Center-one \(n\)-th power construction]
+\label{center-one-nth-power}
+Let \(q\) be odd, let \(d=\gcd(n,q-1)\), and suppose \(q>7\).  If
+\[
+q-C_1(d)\sqrt q>9d^8,
+\]
+where
+\[
+C_1(d)=d^7(7d-8)+1,
+\]
+then \(\F_q\) has a distinct-entry center-one magic square of \(n\)-th powers.
+\end{theorem}
+
+\begin{proof}
+Choose \(b\) so that \(\Lambda_b\) consists of eight distinct nonzero elements.
+The estimate above gives
+\[
+S_1\geq \frac{q-C_1(d)\sqrt q}{d^8}.
+\]
+If the displayed hypothesis holds, then \(S_1>9\).  After discarding the at most
+nine bad values of \(t\), at least one value remains.
+
+For this value of \(t\), each non-center entry \(1+\lambda t\) lies in \(H_n\),
+and no non-center entry is zero.  Since the coefficients \(\lambda\in\Lambda_b\)
+are distinct and \(t\neq0\), the eight non-center entries are distinct from each
+other.  They are also distinct from the center entry \(1\).  Thus the resulting
+center-one magic square has nine distinct entries, all of which are \(n\)-th
+powers.
+\end{proof}
+
+Equivalently, the center-one construction is guaranteed once
+\[
+\sqrt q>
+\frac{C_1(d)+\sqrt{C_1(d)^2+36d^8}}{2}.
+\]
+Since \(C_1(d)=\mc{O}(d^8)\), this gives a sufficient bound of size
+\[
+q=\mc{O}(d^{16}).
+\]
+This bound is much larger than the center-zero bound, but it has the advantage of
+working without the sign assumption \(-1\in H_n\).
+
+\section{Only finitely many odd fields fail for each fixed power}
+
+We can now state the extension of the finite-field classification theorem.
+
+\begin{theorem}[Finite exception theorem for \(n\)-th powers]
+Fix \(n\geq 1\).  Among finite fields of odd characteristic, only finitely many
+fields are \(n\)-Parker.
+\end{theorem}
+
+\begin{proof}
+Let \(\F_q\) be an odd finite field and set
+\[
+d=\gcd(n,q-1).
+\]
+Then \(d\leq n\).  If \(-1\in H_n\), Theorem
+\ref{center-zero-nth-power} gives a magic square of distinct \(n\)-th powers once
+\[
+q-C_0(d)\sqrt q>4d^3+3d^2.
+\]
+Since \(d\leq n\), this is guaranteed for all sufficiently large \(q\), with a
+bound depending only on \(n\).
+
+If \(-1\notin H_n\), Theorem \ref{center-one-nth-power} gives a magic square of
+distinct \(n\)-th powers once
+\[
+q-C_1(d)\sqrt q>9d^8,
+\]
+again with \(d\leq n\).  This is also guaranteed for all sufficiently large
+\(q\), with a bound depending only on \(n\).
+
+Thus there exists a constant \(B(n)\) such that every odd finite field
+\(\F_q\) with \(q>B(n)\) is not \(n\)-Parker.  Hence only finitely many odd finite
+fields can be \(n\)-Parker.
+\end{proof}
+
+This theorem is stronger than the most direct three-parameter counting argument.
+The universal form \(M(E,U,V)\) would suggest counting triples \((E,U,V)\), which
+has main term roughly
+\[
+\frac{q^3}{d^9}.
+\]
+That proves finiteness, but it does not use the special one-parameter families
+from Sections 6 and 7.  The center-zero family gives the sharper order
+\[
+q=\mc{O}(d^6),
+\]
+and the center-one family gives
+\[
+q=\mc{O}(d^{16}).
+\]
+For odd \(n\), the center-zero case always applies, so the finite-exception bound
+has size \(\mc{O}(n^6)\).
+
+\section{Characteristic two}
+\label{sec:char_two}
+
+The preceding theorem is stated for odd finite fields.  This restriction is
+necessary if we insist on distinct entries.
+
+In characteristic \(2\), the magic-square equations collapse.  In fact, every
+\(3\times3\) magic square has repeated entries.  One obtains a form such as
+\[
+\begin{array}{|c|c|c|}
+\hline
+ i & h & h+i+S\\
+\hline
+ h & S & h\\
+\hline
+ h+i+S & h & i\\
+\hline
+\end{array},
+\]
+so the entries \(h\) and \(i\) repeat automatically.  Therefore no field
+\(\F_{2^r}\) contains a \(3\times3\) magic square with nine distinct entries,
+regardless of whether the entries are squares, cubes, or \(n\)-th powers.
+
+Thus the unrestricted statement over all finite fields is false for the
+distinct-entry problem: the fields
+\[
+\F_2,\F_4,\F_8,\F_{16},\ldots
+\]
+are permanent obstructions.  The correct general statement is therefore the one
+proved above: for each fixed \(n\), only finitely many odd-characteristic finite
+fields fail.  In particular, for cubes, all characteristic-two fields are
+\(3\)-Parker for this distinct-entry reason, while the odd-characteristic
+\(3\)-Parker fields are exactly the finite list given in the cube section.
+
+
+\section{Future work}
+
+The finite-field case is especially well suited to character-sum methods because
+\(\F_q^\times\) is cyclic. This makes the set of nonzero \(n\)-th powers a
+multiplicative subgroup
+\[
+H_n=(\F_q^\times)^n
+\]
+whose index is simply \(\gcd(n,q-1)\). The character indicator for \(H_n\) then
+allows the center-zero and center-one constructions to be counted using Weil's
+bound.
+
+There are several natural directions in which the present argument could be
+extended.
+
+\subsection{The ring case}
+
+Cain's finite analogue also considers magic squares of square residues over
+rings such as \(\Z/N\Z\). The corresponding ring problem is more subtle than the
+finite-field problem. Over a finite field, every nonzero element is a unit and
+the nonzero \(n\)-th powers form a subgroup of \(\F_q^\times\). Over \(\Z/N\Z\),
+however, there are zero divisors and nilpotent behavior, and the set of
+\(n\)-th power residues is not controlled only by a single cyclic multiplicative
+group.
+
+The Chinese remainder theorem reduces many questions about \(\Z/N\Z\) to local
+questions modulo prime powers. However, the distinctness condition introduces
+additional compatibility constraints across the different local factors. Thus,
+even if the finite-field case is understood, a full classification over
+\(\Z/N\Z\) requires a more careful analysis of equality patterns and local
+power-residue conditions.
+
+A natural future problem is therefore:
+\begin{quote}
+Classify the rings \(\Z/N\Z\) for which there is no \(3\times3\) magic square
+of distinct \(n\)-th power residues.
+\end{quote}
+For \(n=2\), this is the ring analogue of the Parker-field classification. For
+general \(n\), the problem appears to require combining the finite-field
+character methods from this paper with a more refined analysis of power residues
+modulo prime powers and their behavior under the Chinese remainder theorem.
+
+\subsection{Counting the number of solutions}
+
+This paper focuses mainly on existence: whether a given field contains at least
+one magic square of distinct squares, or more generally of distinct \(n\)-th
+powers. A finer question is to count how many such magic squares exist.
+
+For example, for fixed \(n\) and \(q\), one may ask for the exact value of
+\[
+N_n(q)=
+\#\left\{(E,U,V)\in\F_q^3:
+M(E,U,V)\text{ has nine distinct }n\text{-th power entries}\right\}.
+\]
+The character-sum method gives asymptotic estimates of the form
+\[
+N_n(q)=
+\frac{q^3}{d^9}
++
+O_n(q^{5/2}),
+\qquad
+ d=\gcd(n,q-1),
+\]
+for the full three-parameter family. Similarly, the one-parameter center-zero
+and center-one constructions give lower bounds sufficient for existence.
+However, these estimates do not give an exact count.
+
+A natural refinement of the problem is therefore:
+\begin{quote}
+Determine, or sharply estimate, the number of distinct-entry magic squares of
+squares or \(n\)-th powers over a given finite field \(\F_q\).
+\end{quote}
+This question is interesting even for \(n=2\). It asks not merely whether
+\(\F_q\) is Parker, but how far it is from being Parker. For large \(q\), one
+expects many solutions, but the exact count may depend in a delicate way on
+character sums, degeneracy conditions, and the symmetries of the magic-square
+parametrization.
+
+\subsection{Sharper bounds and \(n\)-Parker fields}
+
+The bounds in this paper are effective but not optimized. For example, the
+center-zero construction gives a bound of size \(\mc{O}(d^6)\), while the center-one
+construction gives a bound of size \(\mc{O}(d^{16})\), where
+\[
+d=\gcd(n,q-1).
+\]
+These bounds are sufficient to prove that only finitely many odd finite fields
+are \(n\)-Parker for each fixed \(n\), but they are not expected to be best
+possible.
+
+It would be useful to improve the constants in these estimates, find better
+one-parameter families, or use higher-dimensional character sums to lower the
+thresholds for guaranteed existence. Such improvements would reduce the amount
+of finite computation needed to classify the \(n\)-Parker fields.
+
+
+\section{Summary of the extension}
+
+For the original square problem, the decisive split was whether \(-1\) is a
+square.  For arbitrary \(n\)-th powers, the same split remains, but with the
+subgroup
+\[
+H_n=(\F_q^\times)^n
+\]
+in place of the subgroup of quadratic residues.
+
+Let
+\[
+d=\gcd(n,q-1).
+\]
+Then the two main estimates are:
+\[
+\boxed{
+\text{If }-1\in H_n,
+\quad
+q-C_0(d)\sqrt q>4d^3+3d^2
+\Longrightarrow
+\F_q\text{ is not }n\text{-Parker},
+}
+\]
+where
+\[
+C_0(d)=(d-1)^2(2d+1),
+\]
+and
+\[
+\boxed{
+q-C_1(d)\sqrt q>9d^8
+\Longrightarrow
+\F_q\text{ is not }n\text{-Parker},
+}
+\]
+where
+\[
+C_1(d)=d^7(7d-8)+1.
+\]
+The first estimate is the direct extension of Section 6, and the second estimate
+is the direct extension of Section 7.  Together they show that, for each fixed
+\(n\), only finitely many odd finite fields fail to contain a distinct magic
+square of \(n\)-th powers.
+
+For cubes, the first estimate gives the explicit bound
+\[
+q\geq 1037.
+\]
+Therefore every odd finite field of order at least \(1037\) contains a distinct
+center-zero magic square of cubes.  The accompanying computation checks the
+remaining odd prime powers and gives the odd-characteristic \(3\)-Parker list
+\[
+\boxed{
+\F_3,
+\F_5,
+\F_7,
+\F_{13},
+\F_{19},
+\F_{25},
+\F_{31},
+\F_{37},
+\F_{43},
+\F_{61},
+\F_{67},
+\F_{79},
+\F_{127},
+\F_{343}.
+}
+\]
+
+\section{Lean verification}
+\label{sec:lean-verification}
+
+The main finite-field results of this paper have been formalized in Lean 4.
+The source code, build instructions, and a map from the paper's results to
+Lean declarations are available in the accompanying repository
+\cite{magicSquaresLeanRepo}. The project uses Lean \texttt{v4.32.1} and
+mathlib \texttt{v4.32.1}, with the resolved dependency commits recorded in
+\texttt{lake-manifest.json}.
+
+\subsection{Scope of the formalization}
+
+The formalization includes the complete square-Parker classification, the
+complete cube-Parker classification in odd characteristic, the
+characteristic-two obstruction for every exponent, and the general-power
+existence bounds and finiteness of exceptional odd cardinalities for each
+positive exponent. In the namespace \texttt{MagicSquares}, the principal
+classification and finiteness declarations are
+\begin{quote}
+\ttfamily
+squareParker\_iff\\
+squareParker\_iff\_of\_char\_ne\_two\\
+cubeParker\_iff\_of\_char\_ne\_two\\
+finite\_nParker\_cardinalities.
+\end{quote}
+The exact hypotheses and conclusions are given by the Lean statements.
+General powers are treated through sufficient existence conditions and
+finiteness results; complete explicit exception lists are established for
+squares and cubes.
+
+The analytic development proves the split-polynomial sharp
+multiplicative-character bounds needed in the counting arguments, including
+products with repeated roots. It uses L-polynomial representations,
+coarse Stepanov bounds over extension fields, and the power-sum lemma.
+These are the versions required here, rather than a formalization of every
+result of Lidl and Niederreiter \cite{LidlNiederreiterFiniteFields} in its full
+generality. The repository's \texttt{PROOF\_DEPENDENCIES.md} explains these
+intermediate arguments and distinguishes the book's theorem numbering from
+that of this paper.
+
+\subsection{Finite certificates and proof checking}
+
+Below the analytic cutoffs, the classifications combine positive
+certificates, negative proofs, and exhaustive coverage of the relevant
+field orders. Lean checks the identities and distinctness conditions used
+by the certificates. Separate coverage arguments establish that no required
+case has been omitted. Thus the final classification proofs do not rely
+on trusting the external search procedure that found the certificate data.
+The generated data is kept separate from the explanatory counting and
+analytic arguments.
+
+The repository provides an automated build and an endpoint axiom audit.
+The audit uses Lean's \texttt{\#print axioms} command and rejects any reported
+axiom outside \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. These are the standard principles of propositional
+extensionality, classical choice, and quotient soundness. In particular,
+proof placeholders and additional assumed character-sum bounds are not
+accepted by this audit. A successful build and endpoint audit are recorded
+for commit \texttt{93efc5597843} of the formalization repository.
+
+The formalization checks the stated Lean theorems and their proofs. The
+correspondence between those statements and the mathematical claims in this
+paper remains part of the mathematical interpretation; the repository's
+\texttt{THEOREM\_MAP.md} makes that correspondence explicit for the main
+results.
+
+\bibliographystyle{alpha}
+\bibliography{finite_square_squares}
+
+\end{document}
