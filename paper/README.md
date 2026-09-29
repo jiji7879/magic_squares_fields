@@ -7,8 +7,6 @@ David Lai
 - [LaTeX source](main.tex)
 - [Bibliography](finite_square_squares.bib)
 
-The original Sections 3 and 4 have been merged into Section 3, "Squares over finite fields and normalized constructions". The Lean verification section is now Section 18. Later section-based theorem and lemma numbers shift accordingly; see [the numbering guide](NUMBERING_CHANGES.md). The mathematics is unchanged. The PDF has been rebuilt, and the merged opening sections have been visually checked.
-
 ## Build the paper
 
 Run from this directory with a LaTeX distribution providing pdfLaTeX, BibTeX, and the packages used in `main.tex` (including TikZ, `algorithm`, and `algpseudocode`):

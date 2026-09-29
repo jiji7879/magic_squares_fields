@@ -124,7 +124,7 @@ working over the integers, one may work over a finite field \(\F_q\) where \(q=p
 expository videos on the original Parker square and its finite-field version. \cite{numberphileParkerSquare, numberphileFiniteFields}. Residue-theoretic
 approaches to the magic square of squares have also been studied by Woll \cite{wollResidue}. The finite problem is no longer open-ended: for each
 fixed finite field, one can in principle check all possibilities.
-The goal is to use Weil's bound to prove an explicit field-size bound above which all finite fields contain a magic square of distinct squares, and then to check the remaining finite fields directly.
+The goal is to use Weil's bound to prove an explicit field-size bound above which all finite fields of odd characteristic contain a magic square of distinct squares, and then to check the remaining finite fields directly.
 
 \section{The universal form of a \(3\times 3\) magic square}
 
@@ -320,20 +320,23 @@ Thus the center-zero form is promising when \(q\equiv1\pmod4\). When \(q\equiv3\
 
 \section{Quadratic characters and Weil's bound}
 
-The main theorem that we use is Weil's bound for complete multiplicative character sums.
+Throughout this section, let \(\F_q\) have odd characteristic. The main theorem that we use is Weil's bound for complete multiplicative character sums.
 \begin{theorem}[Weil's bound]
 \label{weil}
 \cite[Theorem 5.41]{LidlNiederreiterFiniteFields}: If
-\(\psi\) is a nontrivial multiplicative character of \(\F_q\)
-and \(f\in \F_q[x]\) is not a power corresponding to the order
-of \(\psi\), then
+\(\psi\) is a nontrivial multiplicative character of order \(m>1\),
+extended by \(\psi(0)=0\), and \(f\in\F_q[x]\) is a nonconstant
+polynomial that is not an \(m\)-th power in
+\(\overline{\F_q}[x]\), then
 \[
 \left|\sum_{x\in\F_q}\psi(f(x))\right|
 \le (d-1)\sqrt q,
 \]
 where \(d\) is the number of distinct roots of \(f\) over
-\(\overline{\F_q}\). In particular, if \(f\) is square-free of
-degree \(d\), then the above inequality holds.
+\(\overline{\F_q}\). In particular, if \(f\) is nonconstant and
+square-free of degree \(d\), then the above inequality holds.
+The power condition is over the algebraic closure: a nonzero scalar
+multiple of an \(m\)-th power is excluded as well.
 \end{theorem}
 
 Throughout the first half of the paper, we use the quadratic character \(\chi\), which is a nontrivial multiplicative character of order \(2\). We now introduce the basic facts about \(\chi\) that are needed for the square case.
@@ -890,7 +893,7 @@ where the empty product is interpreted as \(1\).  We group the character sums by
 the size of \(\alpha\).
 
 The empty subset contributes \(q\).  If \(|\alpha|=1\), then the corresponding
-linear character sum is zero.  If \(\alpha=\{\lambda,\mu\}\) has size \(2\), then
+character sum is zero by an affine change of variable and nontriviality of the character power.  If \(\alpha=\{\lambda,\mu\}\) has size \(2\), then
 \[
 (1+\lambda t)(1+\mu t)
 =
@@ -1077,8 +1080,9 @@ power extension, the same algorithm is run with the desired exponent \(n\).
 \end{algorithmic}
 \end{algorithm}
 
-Algorithm \ref{alg:exhaustive-search} is the computation used to certify the
-small Parker fields. If it returns \(\textsc{Non-Parker}\), it gives an
+Algorithm \ref{alg:exhaustive-search} describes a complete reference search.
+The implementation uses equivalent normalized searches to certify the small
+Parker fields, together with faster restricted searches for positive witnesses. If it returns \(\textsc{Non-Parker}\), it gives an
 explicit witness. If it returns \(\textsc{Parker}\), then no distinct-entry magic
 square of \(n\)-th powers exists over that field, because every possible magic
 square has been checked through the universal form.
@@ -1094,9 +1098,11 @@ the \(q\equiv3\pmod4\) square case, the center-zero case is impossible and every
 nonzero-center square normalizes to center one, so the complete center-one search
 is sufficient.
 
-Finally, to classify all finite fields below a theoretical bound \(B\), we run
-the exhaustive search over every prime power \(q<B\) in the desired congruence
-class.
+Finally, to classify all finite fields below a theoretical bound \(B\), every
+prime power \(q<B\) in the desired congruence class must be covered by a
+positive witness or a complete negative check. The following reference
+algorithm uses the full search; the implementation applies the normalized
+reductions described above.
 
 \begin{algorithm}[H]
 \caption{Finite-field classification below a bound}
@@ -1158,7 +1164,7 @@ Hence, the only finite fields that are Parker of order \(q\equiv1\pmod4\) are
 
 In the \(q\equiv3\pmod4\) case, Section \ref{sec:center-one-square} proves that every field of order \(q\geq553736\) is guaranteed to be non-Parker.
 
-The remaining cases are checked by running over every prime power \(q<553736\) with \(q\equiv3\pmod4\), not merely over prime fields.  The repository records the fast line-search witnesses in \texttt{q3\_b3\_then\_autoline\_results.txt} and the complete center-one checks for the remaining failures in \texttt{q3\_full\_uv\_results.txt} \cite{magicSquaresFieldsRepo}.  The only finite fields that are Parker of order \(q\equiv3\pmod4\) are
+The remaining cases are checked by running over every prime power \(q<553736\) with \(q\equiv3\pmod4\), not merely over prime fields.  The repository records the fast line-search witnesses in \path{q3_b3_then_autoline_results.txt} and the complete center-one checks for the remaining failures in \path{q3_full_uv_results.txt} \cite{magicSquaresFieldsRepo}.  The only finite fields that are Parker of order \(q\equiv3\pmod4\) are
 \[
 \F_3,
 \qquad \F_7,
@@ -1173,7 +1179,7 @@ The remaining cases are checked by running over every prime power \(q<553736\) w
 \qquad\F_{243}.
 \]
 
-Combining the two cases gives us a complete classification of Parker finite fields.
+Combining the two cases gives a complete classification of Parker finite fields of odd order.
 
 \begin{theorem}
     Among finite fields of odd order, the complete list of Parker finite fields is
@@ -1186,9 +1192,11 @@ Combining the two cases gives us a complete classification of Parker finite fiel
 
 Thus the finite-field classification gives useful local information, but it
 cannot by itself rule out the existence of an integer magic square of squares.
-Since only finitely many odd finite fields are Parker, the odd-characteristic
-finite-field obstruction is finite rather than universal. Characteristic two is
-a separate permanent obstruction, as discussed in Section \ref{sec:char_two}.
+In particular, distinct integer entries can become equal after reduction
+modulo a prime, so nonexistence of a distinct-entry square over a finite field
+does not directly imply nonexistence over the integers. Characteristic two is
+a separate obstruction to distinctness over finite fields, as discussed in
+Section \ref{sec:char_two}.
 
 \section{From squares to arbitrary powers}
 
@@ -1198,7 +1206,8 @@ squares form a multiplicative subgroup of \(\F_q^\times\), and that this subgrou
 can be detected by multiplicative characters.  The same idea works for any fixed
 power.
 
-Let
+For the general-power arguments, fix an integer \(n\geq1\) and let
+\(\F_q\) have odd characteristic. Set
 \[
 H_n=(\F_q^\times)^n=\{a^n:a\in \F_q^\times\}
 \]
@@ -1247,7 +1256,7 @@ convention:
 \[
 \psi^0(x)=1\quad\text{for all }x\in\F_q,
 \]
-while for \(j\neq 0\), we extend \(\psi^j\) to \(0\) by setting
+while for \(1\leq j\leq d-1\), we extend \(\psi^j\) to \(0\) by setting
 \[
 \psi^j(0)=0.
 \]
@@ -1276,7 +1285,7 @@ We will repeatedly use the following form of Weil's bound.  If
 \[
 f(x)=\prod_{i=1}^r (x-a_i)^{e_i}
 \]
-has \(r\) distinct roots and at least one exponent \(e_i\) not divisible by
+has pairwise distinct roots \(a_i\in\F_q\), positive exponents \(e_i\), and at least one exponent \(e_i\) not divisible by
 \(d\), then \(f\) is not a \(d\)-th power over \(\overline{\F_q}\).  Therefore
 \[
 \left|\sum_{x\in\F_q}\psi(f(x))\right|\leq (r-1)\sqrt q.
@@ -1313,7 +1322,7 @@ are all nonzero \(n\)-th powers.
 The condition \(-1\in H_n\) has a simple group-theoretic form.
 
 \begin{lemma}
-Let \(q\) be odd and let \(d=\gcd(n,q-1)\).  Then
+Let \(n\geq1\), let \(q\) be odd, and let \(d=\gcd(n,q-1)\). Then
 \[
 -1\in (\F_q^\times)^n
 \quad\Longleftrightarrow\quad
@@ -1353,7 +1362,7 @@ S_0
 \]
 The term \((a,b,c)=(0,0,0)\) contributes \(q\).  All other terms are controlled
 by Weil's bound.  If exactly one of \(a,b,c\) is nonzero, then the corresponding
-linear character sum is zero.  If exactly two are nonzero, Weil gives a bound
+character sum is zero by an affine change of variable and nontriviality of the character power.  If exactly two are nonzero, Weil gives a bound
 \(\sqrt q\).  If all three are nonzero, Weil gives a bound \(2\sqrt q\).
 Therefore
 \[
@@ -1381,7 +1390,7 @@ additional bad values.
 
 \begin{theorem}[Center-zero \(n\)-th power construction]
 \label{center-zero-nth-power}
-Let \(q\) be odd, let \(d=\gcd(n,q-1)\), and assume
+Let \(n\geq1\), let \(q\) be odd, let \(d=\gcd(n,q-1)\), and assume
 \[
 -1\in (\F_q^\times)^n.
 \]
@@ -1450,7 +1459,9 @@ d=\gcd(3,q-1)
 is either \(1\) or \(3\).
 
 If \(d=1\), then every nonzero element of \(\F_q\) is a cube.  Hence the cube
-condition is automatic.
+condition is automatic. The center-zero existence theorem still requires
+enough elements for distinctness: here \(C_0(1)=0\), so its sufficient
+inequality is \(q>4+3=7\). In particular it holds whenever \(q\geq1037\).
 
 If \(d=3\), then \(-1\in H_3\), because \(-1=(-1)^3\).  Thus the center-zero
 construction applies.  In this case
@@ -1584,7 +1595,8 @@ S_1
 Here an exponent vector \((e_\lambda)\) assigns to each
 \(\lambda\in\Lambda_b\) an exponent \(e_\lambda\in\{0,1,\dots,d-1\}\).
 The all-zero exponent vector contributes \(q\).  If exactly one exponent is
-nonzero, the corresponding character sum is linear and contributes \(0\).  If
+nonzero, the corresponding character power is nontrivial, and an affine
+change of variable shows that its sum is \(0\).  If
 exactly \(r\geq 2\) exponents are nonzero, then the polynomial has \(r\) distinct
 roots, and Weil's bound gives at most \((r-1)\sqrt q\).
 
@@ -1668,7 +1680,7 @@ nine entries are distinct nonzero \(n\)-th powers.
 
 \begin{theorem}[Center-one \(n\)-th power construction]
 \label{center-one-nth-power}
-Let \(q\) be odd, let \(d=\gcd(n,q-1)\), and suppose \(q>7\).  If
+Let \(n\geq1\), let \(q\) be odd, let \(d=\gcd(n,q-1)\), and suppose \(q>7\). If
 \[
 q-C_1(d)\sqrt q>9d^8,
 \]
@@ -1713,8 +1725,9 @@ working without the sign assumption \(-1\in H_n\).
 We can now state the extension of the finite-field classification theorem.
 
 \begin{theorem}[Finite exception theorem for \(n\)-th powers]
-Fix \(n\geq 1\).  Among finite fields of odd characteristic, only finitely many
-fields are \(n\)-Parker.
+Fix \(n\geq1\). Only finitely many odd finite-field cardinalities are
+\(n\)-Parker. Equivalently, up to isomorphism, only finitely many finite
+fields of odd characteristic are \(n\)-Parker.
 \end{theorem}
 
 \begin{proof}
@@ -1735,22 +1748,22 @@ distinct \(n\)-th powers once
 \[
 q-C_1(d)\sqrt q>9d^8,
 \]
-again with \(d\leq n\).  This is also guaranteed for all sufficiently large
+again with \(d\leq n\) and \(q>7\). This is also guaranteed for all sufficiently large
 \(q\), with a bound depending only on \(n\).
 
 Thus there exists a constant \(B(n)\) such that every odd finite field
 \(\F_q\) with \(q>B(n)\) is not \(n\)-Parker.  Hence only finitely many odd finite
-fields can be \(n\)-Parker.
+fields, up to isomorphism, can be \(n\)-Parker.
 \end{proof}
 
-This theorem is stronger than the most direct three-parameter counting argument.
-The universal form \(M(E,U,V)\) would suggest counting triples \((E,U,V)\), which
+For comparison, a three-parameter counting approach based on the universal form \(M(E,U,V)\) would suggest counting triples \((E,U,V)\), which
 has main term roughly
 \[
 \frac{q^3}{d^9}.
 \]
-That proves finiteness, but it does not use the special one-parameter families
-from Sections~\ref{sec:center-zero-square} and~\ref{sec:center-one-square}.  The center-zero family gives the sharper order
+A suitable error estimate would also prove finiteness by that approach. We do
+not establish such an estimate here; the proof above uses the one-parameter families
+from Sections~\ref{sec:center-zero-square} and~\ref{sec:center-one-square}.  The center-zero family gives the smaller sufficient order
 \[
 q=\mc{O}(d^6),
 \]
@@ -1850,7 +1863,9 @@ N_n(q)=
 \#\left\{(E,U,V)\in\F_q^3:
 M(E,U,V)\text{ has nine distinct }n\text{-th power entries}\right\}.
 \]
-The character-sum method gives asymptotic estimates of the form
+For fixed positive \(n\) and odd \(q\), the character-indicator expansion
+suggests the main term \(q^3/d^9\). A natural target is an asymptotic estimate
+of the form
 \[
 N_n(q)=
 \frac{q^3}{d^9}
@@ -1859,9 +1874,11 @@ O_n(q^{5/2}),
 \qquad
  d=\gcd(n,q-1),
 \]
-for the full three-parameter family. Similarly, the one-parameter center-zero
-and center-one constructions give lower bounds sufficient for existence.
-However, these estimates do not give an exact count.
+for the full three-parameter family. This estimate is a proposed direction,
+not a theorem proved in this paper or covered by the accompanying Lean
+formalization. The one-parameter center-zero and center-one constructions
+proved here give lower bounds sufficient for existence, but not an exact count
+for the full family.
 
 A natural refinement of the problem is therefore:
 \begin{quote}
@@ -1906,7 +1923,7 @@ Let
 \[
 d=\gcd(n,q-1).
 \]
-Then the two main estimates are:
+For \(n\geq1\) and odd \(q\), the two main estimates are:
 \[
 \boxed{
 \text{If }-1\in H_n,
@@ -1923,6 +1940,7 @@ C_0(d)=(d-1)^2(2d+1),
 and
 \[
 \boxed{
+\text{If }q>7,\quad
 q-C_1(d)\sqrt q>9d^8
 \Longrightarrow
 \F_q\text{ is not }n\text{-Parker},
