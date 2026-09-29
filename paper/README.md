@@ -7,7 +7,7 @@ David Lai
 - [LaTeX source](main.tex)
 - [Bibliography](finite_square_squares.bib)
 
-The paper includes Section 19, "Lean verification", and a bibliography entry for the formalization repository. The PDF was rebuilt from these sources and the new section and bibliography were visually checked. The preceding mathematical text is unchanged; this update is not a new mathematical review of the paper.
+The original Sections 3 and 4 have been merged into Section 3, "Squares over finite fields and normalized constructions". The Lean verification section is now Section 18. Later section-based theorem and lemma numbers shift accordingly; see [the numbering guide](NUMBERING_CHANGES.md). The mathematics is unchanged. The PDF has been rebuilt, and the merged opening sections have been visually checked.
 
 ## Build the paper
 

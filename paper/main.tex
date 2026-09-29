@@ -203,7 +203,10 @@ Can we choose \(E,U,V\) so that all nine entries of \(M(E,U,V)\) are distinct
 squares?
 \end{quote}
 
-\section{Squares in finite fields}
+\section{Squares over finite fields and normalized constructions}
+\label{sec:finite-field-preliminaries}
+
+\subsection{Squares and Parker fields}
 
 \begin{definition}
 Let \(R\) be a commutative ring. An element \(x\in R\) is a \emph{square} if
@@ -220,7 +223,7 @@ magic square of nine distinct squares over \(\F_q\).
 
 So the finite problem asks: which finite fields are Parker?
 
-\section{Magic Squares of Center Zero and Center One}
+\subsection{Center-zero and center-one forms}
 
 The following two examples, over \(\F_{29}\) and \(\F_{59}\), illustrate the two constructions that will be used below.
 
@@ -1220,7 +1223,7 @@ Fix \(n\geq 1\).  We say that \(\F_q\) is \emph{\(n\)-Parker} if there is no
 \end{definition}
 
 When \(n=2\), this is exactly the Parker condition for magic squares of squares.
-For general \(n\), the same two constructions from Sections 6 and 7 still drive
+For general \(n\), the same two constructions from Sections~\ref{sec:center-zero-square} and~\ref{sec:center-one-square} still drive
 the proof: the center-zero construction when \(-1\) is an \(n\)-th power, and the
 center-one construction when it is not.
 
@@ -1283,7 +1286,7 @@ of order \(d\), rather than only to the quadratic character.
 
 \section{The center-zero construction for \(n\)-th powers}
 
-The center-zero square from Section 6 was
+The center-zero square from Section~\ref{sec:center-zero-square} was
 \[
 M_0(x)=
 \begin{array}{|c|c|c|}
@@ -1368,7 +1371,7 @@ The values \(x=-1,0,1\) are the only places where one of
 \[
 \frac{3}{d}.
 \]
-The center-zero square can also have duplicate entries.  As in Section 6, a
+The center-zero square can also have duplicate entries.  As in Section~\ref{sec:center-zero-square}, a
 direct comparison of the nine entries shows that this can happen only when
 \[
 x\in\left\{-2,-1,-\frac12,0,\frac12,1,2\right\}.
@@ -1477,7 +1480,7 @@ contains a distinct-entry center-zero \(3\times 3\) magic square of cubes.
 \end{corollary}
 
 This is the direct cube analogue of the \(q\equiv1\pmod4\) square argument from
-Section 6.  The important difference is that for cubes, the sign obstruction is
+Section~\ref{sec:center-zero-square}.  The important difference is that for cubes, the sign obstruction is
 absent: \(-1\) is automatically a cube.
 
 Combining the bound above with a finite computation gives a concrete cube
@@ -1520,7 +1523,7 @@ The center-zero method depends on \(-1\in H_n\).  If \(-1\notin H_n\), then a
 center-zero distinct magic square cannot be produced by this method, because
 opposite nonzero entries occur in pairs \(z\) and \(-z\).
 
-We therefore return to the center-one construction from Section 7.  Instead of
+We therefore return to the center-one construction from Section~\ref{sec:center-one-square}.  Instead of
 using only the line \(v=3u\), we use a slightly more flexible line.  This avoids
 small-characteristic coefficient collisions and makes the argument work uniformly
 for arbitrary \(n\).
@@ -1747,7 +1750,7 @@ has main term roughly
 \frac{q^3}{d^9}.
 \]
 That proves finiteness, but it does not use the special one-parameter families
-from Sections 6 and 7.  The center-zero family gives the sharper order
+from Sections~\ref{sec:center-zero-square} and~\ref{sec:center-one-square}.  The center-zero family gives the sharper order
 \[
 q=\mc{O}(d^6),
 \]
@@ -1929,8 +1932,8 @@ where
 \[
 C_1(d)=d^7(7d-8)+1.
 \]
-The first estimate is the direct extension of Section 6, and the second estimate
-is the direct extension of Section 7.  Together they show that, for each fixed
+The first estimate is the direct extension of Section~\ref{sec:center-zero-square}, and the second estimate
+is the direct extension of Section~\ref{sec:center-one-square}.  Together they show that, for each fixed
 \(n\), only finitely many odd finite fields fail to contain a distinct magic
 square of \(n\)-th powers.
 
